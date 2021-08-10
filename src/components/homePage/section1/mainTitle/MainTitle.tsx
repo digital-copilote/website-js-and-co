@@ -4,6 +4,7 @@ import Vulgarisation from "./Vulgarisation";
 import Diffusion from "./Diffusion";
 import Formation from "./Formation";
 import Button from "./ButtonsSec1";
+import Association1901 from "./Association1901";
 
 function MainTitle({ textShadow }: { textShadow: string }): JSX.Element {
     const [animation, setAnimation] = useState("");
@@ -21,8 +22,9 @@ function MainTitle({ textShadow }: { textShadow: string }): JSX.Element {
         );
     }, []);
     return (
-        <div>
+        <div className="h-max-10/12 mt-32">
             <JSandCo textShadow={textShadow} />
+            <Association1901 textShadow={textShadow} animation={animation} />
             <Vulgarisation
                 textShadow={textShadow}
                 animation={animation}
@@ -41,7 +43,7 @@ function MainTitle({ textShadow }: { textShadow: string }): JSX.Element {
                 animation2={animation2}
                 animation3={animation3}
             />
-            <Button animation={animation} />
+            <Button />
         </div>
     );
 }

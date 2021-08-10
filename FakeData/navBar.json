@@ -1,0 +1,14 @@
+[
+    {
+        "li": "Acceuil",
+        "link": "/"
+    },
+    {
+        "li": "Qui sommes nous ?",
+        "link": "/quisommesnous"
+    },
+    {
+        "li": "Nos membres",
+        "link": "/nosmembres"
+    }
+]

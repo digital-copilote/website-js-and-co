@@ -11,20 +11,22 @@ function JSandCo({ textShadow }: IProps): JSX.Element {
     const [animation4, setAnimation4] = useState("");
     useEffect(() => {
         setAnimation(
-            "transform sm:translate-x-16 translate-x-10 transition-transform duration-2000",
+            "transform md:translate-x-16 translate-x-10 transition-transform duration-2000",
         );
         setAnimation2(
-            "transform sm:translate-x-16 translate-x-10 transition-transform duration-1000",
+            "transform md:translate-x-16 translate-x-10 transition-transform duration-1000",
         );
         setAnimation3(
-            "transform sm:-translate-x-16 -translate-x-10 transition-transform duration-1000",
+            "transform md:-translate-x-16 -translate-x-10 transition-transform duration-1000",
         );
         setAnimation4(
-            "transform sm:-translate-x-16 -translate-x-10 transition-transform duration-2000",
+            "transform md:-translate-x-16 -translate-x-10 transition-transform duration-2000",
         );
     }, []);
     return (
-        <div className={`font-bold text-6xl sm:text-9xl flex`}>
+        <div
+            className={`font-bold font-titilumWeb text-7xl md:text-10xl flex justify-center`}
+        >
             <span
                 className={`mx-1  ${animation}`}
                 style={{ textShadow: textShadow }}
@@ -38,7 +40,7 @@ function JSandCo({ textShadow }: IProps): JSX.Element {
                 S
             </span>
             <span
-                className="sm:mx-20 mx-12 animate-fade  text-white "
+                className="md:mx-20 mx-12 animate-fade  text-white "
                 style={{ textShadow: textShadow }}
             >
                 &

@@ -14,7 +14,7 @@ function Section1(): JSX.Element {
     }, []);
     return (
         <div
-            className="flex flex-col justify-between pt-40 pb-10 items-center h-screen w-screen bg-customYellow "
+            className="flex flex-col justify-center items-center h-screen w-screen bg-customYellow "
             style={{ scrollSnapAlign: "start" }}
         >
             <div>
@@ -22,7 +22,7 @@ function Section1(): JSX.Element {
             </div>
             <div
                 // ref={scrollRefSec1}
-                className={`animate-fade sm:mt-40 mt-20 ${animation}`}
+                className={`animate-fade mt-20 ${animation}`}
             >
                 <Image
                     src="/icons/DownArrow.svg"

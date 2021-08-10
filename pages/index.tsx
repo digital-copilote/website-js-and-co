@@ -5,7 +5,7 @@ import React from "react";
 
 const Home: React.FC = () => {
     return (
-        <div>
+        <div className="container">
             <Section1 />
         </div>
     );

@@ -4,7 +4,11 @@ import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-    return <Component {...pageProps} />;
+    return (
+        <div>
+            <Component {...pageProps} />;
+        </div>
+    );
 }
 
 export default MyApp;

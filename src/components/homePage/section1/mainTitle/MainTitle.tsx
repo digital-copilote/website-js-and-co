@@ -43,7 +43,7 @@ function MainTitle({ textShadow }: { textShadow: string }): JSX.Element {
                 animation2={animation2}
                 animation3={animation3}
             />
-            <Button animation={animation} />
+            <Button />
         </div>
     );
 }

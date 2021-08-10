@@ -1,8 +1,10 @@
 {
     "button1": {
-        "title": "Qui sommes nous ? "
+        "title": "Qui sommes nous ? ",
+        "link": "/quisommesnous"
     },
     "button2": {
-        "title": "Devenir membre"
+        "title": "Devenir membre",
+        "link": "/devenirmembre"
     }
 }

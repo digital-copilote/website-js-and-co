@@ -15,13 +15,27 @@ module.exports = {
             letterSpacing: {
                 widest: ".5em",
             },
+            height: {
+                event: "38rem",
+            },
             animation: {
                 fade: "fadeIn ease 3s",
+                fadeRight: "fadeInRight ease-in 1s",
             },
             keyframes: {
                 fadeIn: {
                     "0%": { opacity: 0 },
                     "100%": { opacity: 1 },
+                },
+                fadeInRight: {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translate(-200px, 0)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translate(0, 0)",
+                    },
                 },
             },
             transitionDuration: {
@@ -30,6 +44,7 @@ module.exports = {
             },
             boxShadow: {
                 buttonShadow: "5px 5px 10px rgba(0, 0, 0, 0.4)",
+                cardShadow: "5px 5px 20px rgba(0, 0, 0, 0.15)",
             },
         },
     },

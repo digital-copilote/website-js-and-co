@@ -8,4 +8,13 @@ interface IKeyWords {
 interface IButton {
     children: string;
     link: string;
+    animation: string | null;
+}
+
+interface IEvent {
+    title: string;
+    imageUrl: string;
+    date: string;
+    description: string;
+    linkRegister: string;
 }

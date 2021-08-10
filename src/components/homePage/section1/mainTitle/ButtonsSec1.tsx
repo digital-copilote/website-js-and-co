@@ -1,16 +1,27 @@
 import BlackButton from "@components/buttons/BlackButton";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import data from "../../../../../FakeData/HomePage/section1.json";
 
 function Button(): JSX.Element {
+    const [animation, setAnimation] = useState("");
+
+    useEffect(() => {
+        setAnimation(
+            "transform -translate-y-24 transition-transform duration-2000",
+        );
+    }, []);
     return (
         <div className="flex flex-col text-sm md:text-xs md:flex-row justify-center items-center w-full md:mt-20 mt-10">
-            <BlackButton link={data.button1.link}>
-                {data.button1.title}
-            </BlackButton>
-            <BlackButton link={data.button2.link}>
-                {data.button2.title}
-            </BlackButton>
+            <div className="mx-4">
+                <BlackButton link={data.button1.link} animation={animation}>
+                    {data.button1.title}
+                </BlackButton>
+            </div>
+            <div className="mx-4">
+                <BlackButton link={data.button2.link} animation={animation}>
+                    {data.button2.title}
+                </BlackButton>
+            </div>
         </div>
     );
 }

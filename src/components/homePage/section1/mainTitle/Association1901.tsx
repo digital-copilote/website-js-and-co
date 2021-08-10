@@ -10,7 +10,7 @@ function Association1901({
     return (
         <div className="font-titilumWeb flex justify-center mt-32">
             <span
-                className={`tracking-widest md:text-3xl text-md animate-fade ${animation}`}
+                className={`tracking-widest md:text-xl text-md animate-fade ${animation}`}
                 style={{ textShadow: textShadow }}
             >
                 Assiociation 1091

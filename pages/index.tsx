@@ -7,14 +7,7 @@ import React from "react";
 
 const Home: React.FC = () => {
     return (
-<<<<<<< HEAD
-        <div
-            className="h-screen overflow-y-scroll"
-            style={{ scrollSnapType: "y mandatory" }}
-        >
-=======
-        <div className="container">
->>>>>>> Heading/HomePage
+        <div>
             <Section1 />
             <Section2 />
         </div>

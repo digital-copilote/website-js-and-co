@@ -7,7 +7,7 @@ function Vulgarisation({
     animation3,
 }: IKeyWords): JSX.Element {
     return (
-        <div className="font-bold font-titilumWeb md:text-3xl text-lg  flex justify-center mt-5 md:mt-10">
+        <div className="font-bold font-titilumWeb md:text-xl text-lg  flex justify-center mt-5 md:mt-10">
             <span
                 className={`md:mx-4 mx-4 animate-fade  ${animation}`}
                 style={{ textShadow: textShadow }}

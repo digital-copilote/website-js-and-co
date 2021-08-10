@@ -7,9 +7,9 @@ function Formation({
     animation3,
 }: IKeyWords): JSX.Element {
     return (
-        <div className="font-bold font-titilumWeb md:text-3xl text-lg flex justify-center md:mt-5 mt-2">
+        <div className="font-bold font-titilumWeb md:text-xl text-lg flex justify-center md:mt-5 mt-2">
             <span
-                className={`md:mx-4 animate-fade  ${animation}`}
+                className={`md:mx-3 animate-fade  ${animation}`}
                 style={{ textShadow: textShadow }}
             >
                 F
@@ -57,7 +57,7 @@ function Formation({
                 o
             </span>
             <span
-                className={`md:mx-4  animate-fade ${animation2}`}
+                className={`md:mx-3  animate-fade ${animation2}`}
                 style={{ textShadow: textShadow }}
             >
                 n

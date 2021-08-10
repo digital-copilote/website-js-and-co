@@ -25,7 +25,7 @@ function JSandCo({ textShadow }: IProps): JSX.Element {
     }, []);
     return (
         <div
-            className={`font-bold font-titilumWeb text-7xl md:text-10xl flex justify-center`}
+            className={`font-bold font-titilumWeb text-7xl md:text-9xl flex justify-center`}
         >
             <span
                 className={`mx-1  ${animation}`}

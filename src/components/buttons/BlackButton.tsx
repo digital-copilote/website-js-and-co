@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 
-function BlackButton({ children, link }: IButton): JSX.Element {
-    const [animation, setAnimation] = useState("");
+function BlackButton({ children, link, animation }: IButton): JSX.Element {
     const router = useRouter();
-    useEffect(() => {
-        setAnimation(
-            "transform -translate-y-24 transition-transform duration-2000",
-        );
-    }, []);
+
     return (
         <button
             onClick={() => router.push(link)}
-            className={`w-11/12 md:w-52 p-2 my-4 md:mx-4 md:my-0 animate-fade shadow-buttonShadow bg-black rounded-md text-customYellow ${animation}`}
+            className={`w-64 md:w-52 p-1 my-4 text-sm  md:my-0 animate-fade shadow-buttonShadow bg-black rounded-md text-customYellow ${animation}`}
         >
             {/* data to fetch ref to section1.json files */}
             {children}

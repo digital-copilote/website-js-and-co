@@ -55,7 +55,7 @@ function JSandCo({ textShadow }: IProps): JSX.Element {
                 className={`mx-1 ${animation4}`}
                 style={{ textShadow: textShadow }}
             >
-                O
+                o
             </span>
         </div>
     );

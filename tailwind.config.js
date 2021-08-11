@@ -6,6 +6,15 @@ module.exports = {
             colors: {
                 customYellow: "#FFDB26",
             },
+            fontFamily: {
+                titilumWeb: ["Titillium Web", "sans-serif"],
+            },
+            fontSize: {
+                "10xl": ["180px"],
+            },
+            letterSpacing: {
+                widest: ".5em",
+            },
             animation: {
                 fade: "fadeIn ease 3s",
             },

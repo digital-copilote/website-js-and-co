@@ -22,15 +22,13 @@ function TextSection(): JSX.Element {
                     {data.textSection.text}
                 </p>
             </div>
-            <div className="mt-5  md:pb-7  animate-fadeRight border-b border-black">
-                <div className="">
-                    <BlackButton
-                        animation={null}
-                        link={data.textSection.lienMeetUp}
-                    >
-                        Rejoindre le meetUp
-                    </BlackButton>
-                </div>
+            <div className="mt-8 md:pb-7  animate-fadeRight border-b border-black">
+                <BlackButton
+                    animation={null}
+                    link={data.textSection.lienMeetUp}
+                >
+                    Rejoindre le meetUp
+                </BlackButton>
             </div>
         </div>
     );

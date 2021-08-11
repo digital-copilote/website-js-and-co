@@ -13,7 +13,7 @@ function Association1901({
                 className={`tracking-widest md:text-xl text-md animate-fade ${animation}`}
                 style={{ textShadow: textShadow }}
             >
-                Assiociation 1091
+                Assiociation 1901
             </span>
         </div>
     );

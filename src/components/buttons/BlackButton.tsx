@@ -7,7 +7,7 @@ function BlackButton({ children, link, animation }: IButton): JSX.Element {
     return (
         <button
             onClick={() => router.push(link)}
-            className={`w-64 md:w-52 p-1 my-4 text-sm  md:my-0 animate-fade shadow-buttonShadow bg-black rounded-md text-customYellow ${animation}`}
+            className={`w-52 lg:w-52 p-1 my-4 text-sm  lg:my-0 animate-fade shadow-buttonShadow bg-black rounded-md text-customYellow ${animation}`}
         >
             {/* data to fetch ref to section1.json files */}
             {children}

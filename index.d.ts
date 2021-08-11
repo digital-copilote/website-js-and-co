@@ -6,7 +6,7 @@ interface IKeyWords {
 }
 
 interface IButton {
-    children: string;
+    children: string | undefined | null;
     link: string;
     animation: string | null;
 }

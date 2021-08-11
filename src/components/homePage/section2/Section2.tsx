@@ -9,16 +9,16 @@ interface IProps {
 function Section2({ Myref2, isVisibleSec2 }: IProps): JSX.Element {
     return (
         <div
-            className="h-screen w-screen flex pt-10  md:px-10 justify-center items-center"
+            className="h-screen w-screen flex pt-10 md:px-10  lg:px-10 items-center"
             style={{ scrollSnapAlign: "start" }}
         >
             <div ref={Myref2}>
                 {isVisibleSec2 && (
-                    <div className="flex flex-col md:flex-row items-center">
-                        <div className="md:w-6/12 w-full">
+                    <div className="flex flex-col lg:flex-row  justify-start">
+                        <div className="lg:w-6/12 w-full">
                             <TextSection />
                         </div>
-                        <div className="md:w-8/12 w-full md:h-event overflow-y-scroll">
+                        <div className="lg:w-8/12 w-full lg:h-event overflow-y-scroll">
                             <Events />
                         </div>
                     </div>

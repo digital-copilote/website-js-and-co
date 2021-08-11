@@ -7,6 +7,7 @@ import { GET_CONTENT } from "src/services/queries";
 import { useDispatch } from "react-redux";
 import { setContent } from "src/redux/action";
 import { allContent_content } from "../__generated__/allContent";
+import { GetStaticPropsResult } from "next";
 
 // import { } from "@components";
 
@@ -15,7 +16,6 @@ export function Home(content: allContent_content): JSX.Element {
     const scrollRefSec1 = useRef();
     const scrollRefSec2 = useRef();
     console.log("Props:", content);
-    const isVisibleSec1 = useOnScreen(scrollRefSec1);
     const isVisibleSec2 = useOnScreen(scrollRefSec2);
     dispatch(setContent(content));
     return (
@@ -26,14 +26,21 @@ export function Home(content: allContent_content): JSX.Element {
     );
 }
 
-export async function getStaticProps() {
-    const { data } = await apolloClient.query({
-        query: GET_CONTENT,
-    });
-    console.log(data);
-    return {
-        props: data.content,
-    };
+export async function getStaticProps(): Promise<
+    GetStaticPropsResult<allContent_content>
+> {
+    try {
+        const { data } = await apolloClient.query({
+            query: GET_CONTENT,
+        });
+        console.log(data);
+
+        return {
+            props: { ...data?.content } || null,
+        };
+    } catch (error) {
+        return { notFound: true };
+    }
 }
 
 export default Home;

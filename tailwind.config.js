@@ -20,6 +20,8 @@ module.exports = {
             },
             animation: {
                 fade: "fadeIn ease 3s",
+                fadeFast: "fadeIn ease 0.5s",
+                fadeMid: "fadeIn ease 1.5s",
                 fadeRight: "fadeInRight ease-in 1s",
             },
             keyframes: {
@@ -46,10 +48,15 @@ module.exports = {
                 buttonShadow: "5px 5px 10px rgba(0, 0, 0, 0.4)",
                 cardShadow: "5px 5px 20px rgba(0, 0, 0, 0.15)",
             },
+            screens: {
+                lg: "1100px",
+            },
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            animation: ["motion-safe"],
+        },
     },
     plugins: [],
 };

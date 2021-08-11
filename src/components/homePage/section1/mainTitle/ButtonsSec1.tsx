@@ -11,7 +11,7 @@ function Button(): JSX.Element {
         );
     }, []);
     return (
-        <div className="flex flex-col text-sm md:text-xs md:flex-row justify-center items-center w-full md:mt-20 mt-10">
+        <div className="flex flex-col text-sm lg:text-xs lg:flex-row justify-center items-center w-full lg:mt-20 mt-10">
             <div className="mx-4">
                 <BlackButton link={data.button1.link} animation={animation}>
                     {data.button1.title}

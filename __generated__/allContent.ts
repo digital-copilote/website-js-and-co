@@ -33,7 +33,7 @@ export interface allContent_content {
   font_primary_color: string | null;
   font_secondary_color: string | null;
   actu: allContent_content_actu | null;
-  event: (allContent_content_event | null)[] | null;
+  events: (allContent_content_event | null)[] | null;
   published_at: any | null;
   created_at: any;
   updated_at: any;

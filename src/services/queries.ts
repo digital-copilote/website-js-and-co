@@ -13,7 +13,7 @@ export const GET_CONTENT = gql`
                 title_2
                 text
             }
-            event {
+            events {
                 id
                 title
                 image

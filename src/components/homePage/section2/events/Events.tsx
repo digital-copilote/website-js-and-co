@@ -1,13 +1,15 @@
 import React from "react";
-import data from "FakeData/HomePage/section2.json";
 import OneEvent from "./OneEvent";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
 
 function Events(): JSX.Element {
-    console.log(data.Events);
+    const { event } = useSelector((state: RootState) => state.content);
+    console.log("events", event);
     return (
         <div className="md:mx-10 mx-5 h-96">
             <div>
-                {data.Events.map((item) => {
+                {event?.map((item) => {
                     return <OneEvent item={item} />;
                 })}
             </div>

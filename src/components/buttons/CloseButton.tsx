@@ -6,16 +6,13 @@ interface IProps {
     setAnimation: Dispatch<SetStateAction<string>>;
 }
 
-function CloseButton({ setIsOpen, setAnimation }: IProps): JSX.Element {
+function CloseButton({ setIsOpen }: IProps): JSX.Element {
     return (
         <div>
             <button
                 className="transition duration-500 transform hover:scale-125 hover:opacity-95"
                 onClick={() => {
                     setIsOpen(false);
-                    setAnimation(
-                        "transition duration-1000 scale-50 animation-fade",
-                    );
                 }}
             >
                 <Image

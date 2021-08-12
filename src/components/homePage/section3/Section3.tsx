@@ -1,20 +1,22 @@
 import { useOnScreen } from "hook/useOnScroll";
-import React, { MutableRefObject, useRef } from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
+import CardContent from "./CardContent";
 import CardSection from "./CardSection";
 import TextSection from "./TextSection";
 
 function Section3(): JSX.Element {
     const { action } = useSelector((state: RootState) => state.content);
-    console.log("action", action);
+
     const scrollRefSec3 = useRef();
     const isVisibleSec3 = useOnScreen(
         scrollRefSec3 as unknown as MutableRefObject<HTMLDivElement>,
     );
+
     return (
         <div
-            className="h-screen flex flex-col justify-center w-screen pt-12 bg-customYellow"
+            className="h-screen flex flex-col w-screen pt-12 relative bg-customYellow lg:bg-white"
             style={{ scrollSnapAlign: "start" }}
         >
             <div

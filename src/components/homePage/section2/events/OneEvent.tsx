@@ -1,26 +1,59 @@
-import React from "react";
+import { allContent_content_event } from "__generated__/allContent";
+import OneEventModal from "./OneEventModal";
+import { useState } from "react";
 
-function OneEvent({ item }: { item: IEvent }): JSX.Element {
+function OneEvent({
+    item,
+}: {
+    item: allContent_content_event | null;
+}): JSX.Element {
+    const date = new Date(item?.date).toLocaleDateString();
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [ImgAnimation, setImgAnimation] = useState("");
+
     return (
-        <div className=" flex fong-titilumWeb rounded-lg mt-5 border animate-fade shadow-cardShadow border-black">
-            <div
-                className="w-4/12 rounded-lg  animate-fade shadow-cardShadow border border-black hidden md:flex"
-                style={{
-                    backgroundImage: `url(${item.imageUrl})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-            ></div>
-            <div className="w-8/12 p-2 flex-col" style={{ opacity: 1 }}>
-                <h3 className="text-lg font-bold">{item.title}</h3>
-                <h4 className="text-sm mt-1">{item.date}</h4>
-                <div className="h-8 mt-2 overflow-hidden overflow-ellipsis">
-                    <p className="text-xs leading-4">{item.description}</p>
-                </div>
+        <div>
+            {isOpen && (
+                <OneEventModal
+                    date={date}
+                    item={item}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                ></OneEventModal>
+            )}
+            <button
+                onMouseEnter={() =>
+                    setImgAnimation(
+                        "transform transition-transform duration-1000  -translate-y-2 -translate-x-2",
+                    )
+                }
+                onMouseLeave={() =>
+                    setImgAnimation(
+                        "transform transition-transform duration-1000  translate-y-0 translate-x-0",
+                    )
+                }
+                onClick={() => setIsOpen(true)}
+                className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg mt-8 border animate-fade shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
+            >
+                <div
+                    className={`w-4/12 rounded-lg  animate-fade tra shadow-cardShadow border border-black hidden lg:flex ${ImgAnimation}`}
+                    style={{
+                        backgroundImage: `url(${item?.image})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                ></div>
+                <div className="w-8/12 p-2 flex-col " style={{ opacity: 1 }}>
+                    <h3 className="text-lg font-bold">{item?.title}</h3>
+                    <h4 className="text-sm mt-1">{date}</h4>
+                    <div className="h-8 mt-2 overflow-hidden overflow-ellipsis">
+                        <p className="text-xs leading-4">{item?.text}</p>
+                    </div>
 
-                <button className="mt-2 text-xs underline">Plus d'infos</button>
-            </div>
+                    <a className="mt-2 text-xs underline">Plus d'infos</a>
+                </div>
+            </button>
         </div>
     );
 }

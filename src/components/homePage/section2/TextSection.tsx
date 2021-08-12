@@ -1,32 +1,28 @@
-import React from "react";
-import data from "FakeData/HomePage/section2.json";
 import BlackButton from "@components/buttons/BlackButton";
+import { RootState } from "src/redux/reducer";
+import { useSelector } from "react-redux";
 
 function TextSection(): JSX.Element {
+    const { actu } = useSelector((state: RootState) => state).content;
     return (
-        <div className="pt-10 md:h-event flex flex-col justify-between  font-titilumWeb tracking-widest md:mx-10 mx-5">
+        <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-widest lg:mx-10 mx-5">
             <div className="animate-fadeRight">
                 <div className="border-b  border-black">
-                    <h2 className={`md:text-4xl text-4xl `}>
-                        {data.textSection.title1}
-                    </h2>
+                    <h2 className={`lg:text-4xl text-4xl `}>{actu?.title_1}</h2>
                     <h3
-                        className={`md:text-lg text-ms font-bold md:mt-5 mt-2  `}
+                        className={`lg:text-lg text-ms font-bold lg:mt-5 mt-2  `}
                     >
-                        {data.textSection.title2}
+                        {actu?.title_2}
                     </h3>
                 </div>
                 <p
-                    className={`tracking-wide md:text-base text-xs mt-2 md:mt-5 leading-5 md:leading-9`}
+                    className={`tracking-wide lg:text-base text-xs mt-2 lg:mt-5 leading-5 lg:leading-9`}
                 >
-                    {data.textSection.text}
+                    {actu?.text}
                 </p>
             </div>
-            <div className="mt-8 md:pb-7  animate-fadeRight border-b border-black">
-                <BlackButton
-                    animation={null}
-                    link={data.textSection.lienMeetUp}
-                >
+            <div className="mt-8 lg:pb-7  animate-fadeRight border-b border-black">
+                <BlackButton animation={null} link={""}>
                     Rejoindre le meetUp
                 </BlackButton>
             </div>

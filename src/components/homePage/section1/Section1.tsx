@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import MainTitle from "./mainTitle/MainTitle";
 import Image from "next/image";
 
-function Section1({ Myref1 }: { Myref1: any }): JSX.Element {
+function Section1(): JSX.Element {
+    const scrollRefSec1 = useRef();
     const textShadow = "5px 5px 10px rgba(0, 0, 0, 0.25)";
     const [animation, setAnimation] = useState("");
     useEffect(() => {
@@ -12,7 +13,7 @@ function Section1({ Myref1 }: { Myref1: any }): JSX.Element {
     }, []);
     return (
         <div
-            ref={Myref1}
+            ref={scrollRefSec1 as unknown as MutableRefObject<HTMLDivElement>}
             className="flex flex-col justify-center items-center h-screen w-screen bg-customYellow "
             style={{ scrollSnapAlign: "start" }}
         >

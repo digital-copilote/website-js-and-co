@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { allContent_content_event } from "__generated__/allContent";
 import BlackButton from "../../../buttons/BlackButton";
-import Image from "next/image";
+import CloseButton from "../../../buttons/CloseButton";
 
 interface Iprops {
     isOpen: boolean;
@@ -20,7 +20,13 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                 >
                     <div className="fixed inset-0 z-50 " />
 
-                    <div className=" w-9/12 shadow-buttonShadow animate-fadeFast  flex flex-col  border border-black justify-start z-50 text-black dark:text-white bg-customYellow dark:bg-component rounded-lg">
+                    <div className="w-11/12 lg:9/12 shadow-buttonShadow animate-fadeFast  flex flex-col  border border-black justify-start z-50 text-black dark:text-white bg-customYellow dark:bg-component rounded-lg">
+                        <div className="flex lg:hidden w-full justify-end mt-3 pr-3">
+                            <CloseButton
+                                setIsOpen={setIsOpen}
+                                setAnimation={setAniamtion}
+                            />
+                        </div>
                         <div className="mb-6 text-xs sm:text-xs">
                             <div>
                                 <div
@@ -31,27 +37,9 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                                         backgroundSize: "cover",
                                         backgroundRepeat: "no-repeat",
                                     }}
-                                >
-                                    <button
-                                        className="transition duration-500 transform hover:scale-125 hover:opacity-95"
-                                        onClick={() => {
-                                            setIsOpen(false);
-                                            setAniamtion(
-                                                "transition duration-1000 scale-50 animation-fade",
-                                            );
-                                        }}
-                                    >
-                                        <Image
-                                            className="shadow-buttonShadow"
-                                            src="/icons/CloseButton.svg"
-                                            alt="close Button"
-                                            height="25x"
-                                            width="25px"
-                                        />
-                                    </button>
-                                </div>
+                                ></div>
                                 <div className="text-center mx-8 lg:mx-24 lg:my-14">
-                                    <h2 className="w-full text-center text-3xl font-bold mt-5">
+                                    <h2 className="w-full text-center text-3xl font-bold mt-2 md:mt-5">
                                         {item?.title}
                                     </h2>
                                     <h3 className="text-xl mt-3">

@@ -1,11 +1,11 @@
-import { allContent_content_event } from "__generated__/allContent";
+import { allContent_content_events } from "__generated__/allContent";
 import OneEventModal from "./OneEventModal";
 import { useState } from "react";
 
 function OneEvent({
     item,
 }: {
-    item: allContent_content_event | null;
+    item: allContent_content_events | null;
 }): JSX.Element {
     const date = new Date(item?.date).toLocaleDateString();
     const [isOpen, setIsOpen] = useState<boolean>(false);

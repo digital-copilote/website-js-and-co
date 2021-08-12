@@ -1,11 +1,11 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
-import { allContent_content_event } from "__generated__/allContent";
+import { allContent_content_events } from "__generated__/allContent";
 import BlackButton from "../../../buttons/BlackButton";
 import CloseButton from "../../../buttons/CloseButton";
 
 interface Iprops {
     isOpen: boolean;
-    item: allContent_content_event | null;
+    item: allContent_content_events | null;
     date: string;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -37,7 +37,12 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                                         backgroundSize: "cover",
                                         backgroundRepeat: "no-repeat",
                                     }}
-                                ></div>
+                                >
+                                    <CloseButton
+                                        setIsOpen={setIsOpen}
+                                        setAnimation={setAniamtion}
+                                    />
+                                </div>
                                 <div className="text-center mx-8 lg:mx-24 lg:my-14">
                                     <h2 className="w-full text-center text-3xl font-bold mt-2 md:mt-5">
                                         {item?.title}

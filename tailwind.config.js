@@ -22,7 +22,8 @@ module.exports = {
                 fade: "fadeIn ease 3s",
                 fadeFast: "fadeIn ease 0.5s",
                 fadeMid: "fadeIn ease 1.5s",
-                fadeRight: "fadeInRight ease-in 1s",
+                fadeRight: "fadeInRight ease-in 0.5s",
+                fadeTop: "fadeInTop ease-in 0.5s",
             },
             keyframes: {
                 fadeIn: {
@@ -33,6 +34,16 @@ module.exports = {
                     "0%": {
                         opacity: 0,
                         transform: "translate(-200px, 0)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translate(0, 0)",
+                    },
+                },
+                fadeInTop: {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translate(0, -100px)",
                     },
                     "100%": {
                         opacity: 1,

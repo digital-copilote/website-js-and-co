@@ -3,15 +3,20 @@ export const GET_CONTENT = gql`
     query allContent {
         content {
             id
+            created_at
+            updated_at
             primary_color
             secondary_color
             font_primary_color
             font_secondary_color
+            published_at
+            __typename
             actu {
                 id
                 title_1
                 title_2
                 text
+                __typename
             }
             events {
                 id
@@ -20,10 +25,21 @@ export const GET_CONTENT = gql`
                 date
                 text
                 register
+                __typename
             }
-            published_at
-            created_at
-            updated_at
+            action {
+                id
+                title
+                text
+                __typename
+                action_cards {
+                    id
+                    image
+                    title
+                    text
+                    __typename
+                }
+            }
         }
     }
 `;

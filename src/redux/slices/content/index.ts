@@ -15,7 +15,7 @@ const initialState: T.allContent_content = {
         text: "Suite à la réussite du CodeFest de 2017, nous avons pour projet d'organiser un autre hackathon dans les prochains mois et d'en faire une habitude. Lighting talk, retour d'expérience ou simple rencontre autour d'un verre, tenez vous au courant sur Facebook ou Meetup",
     },
     __typename: "Content",
-    event: [
+    events: [
         {
             __typename: "ComponentContentEvent",
             id: "1",

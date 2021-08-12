@@ -6,6 +6,6 @@ import rootReducer from "./reducer";
 const store = configureStore({ reducer: rootReducer });
 
 export type AppDispatch = typeof store.dispatch;
-export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppDispatch = (): AppDispatch => useDispatch();
 
 export default store;

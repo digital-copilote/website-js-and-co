@@ -1,12 +1,9 @@
-import data from "FakeData/HomePage/section2.json";
 import BlackButton from "@components/buttons/BlackButton";
 import { RootState } from "src/redux/reducer";
 import { useSelector } from "react-redux";
 
 function TextSection(): JSX.Element {
     const { actu } = useSelector((state: RootState) => state).content;
-
-    console.log("Actu", actu);
     return (
         <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-widest lg:mx-10 mx-5">
             <div className="animate-fadeRight">

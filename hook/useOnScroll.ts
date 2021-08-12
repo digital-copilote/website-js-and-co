@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-export function useOnScreen(ref: any | undefined) {
+import { MutableRefObject, useEffect, useState } from "react";
+export function useOnScreen(ref: MutableRefObject<HTMLDivElement>): boolean {
     const [isIntersecting, setIntersecting] = useState(false);
 
     useEffect(() => {

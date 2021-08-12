@@ -9,7 +9,6 @@ import { onError } from "@apollo/client/link/error";
 import { setContext } from "@apollo/client/link/context";
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
-console.log(process.env.NEXT_PUBLIC_API_URL, process.env.NEXT_PUBLIC_API_TOKEN);
 
 const httpLink = createHttpLink({
     uri: process.env.NEXT_PUBLIC_API_URL,
@@ -28,7 +27,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (networkError) console.log(`[Network error]: ${networkError}`);
 });
 
-const authLink = setContext((_, { headers }) => {
+const authLink = setContext(() => {
     return {
         headers: {
             Authorization: process.env.NEXT_PUBLIC_API_TOKEN,
@@ -43,7 +42,7 @@ const createApolloClient = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-export const initializeApollo = () => {
+export const initializeApollo = (): ApolloClient<NormalizedCacheObject> => {
     // For SSG and SSR always create a new Apollo Client
     if (typeof window === "undefined") {
         return createApolloClient;

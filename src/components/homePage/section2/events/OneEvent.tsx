@@ -51,9 +51,7 @@ function OneEvent({
                         <p className="text-xs leading-4">{item?.text}</p>
                     </div>
 
-                    <button className="mt-2 text-xs underline">
-                        Plus d'infos
-                    </button>
+                    <a className="mt-2 text-xs underline">Plus d'infos</a>
                 </div>
             </button>
         </div>

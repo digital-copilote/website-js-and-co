@@ -11,9 +11,10 @@ function NavBar(): JSX.Element {
             style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.25)" }}
         >
             <div className="flex text-ms items-center justify-center lg:justify-start z-10 animate-fade">
-                {data.map((item) => {
+                {data.map((item, index) => {
                     return (
                         <button
+                            key={index}
                             onClick={() => router.push(item.link)}
                             className="lg:mx-4 mx-2"
                         >

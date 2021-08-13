@@ -3,11 +3,6 @@ import { RootState } from "src/redux/reducer";
 import { useSelector } from "react-redux";
 
 function TextSection(): JSX.Element {
-    // {
-    //     //     textVisibleSec2,
-    //     // }: {
-    //     //     textIsVisibleSec2: boolean;
-    // },
     const { actu } = useSelector((state: RootState) => state).content;
     return (
         <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-widest lg:mx-10 mx-5">

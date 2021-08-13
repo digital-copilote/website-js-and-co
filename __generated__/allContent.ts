@@ -38,7 +38,7 @@ export interface allContent_content_action {
   id: string;
   title: string | null;
   text: string | null;
-  action_cards: (allContent_content_action_action_cards | null)[] | null;
+  action_cards: (allContent_content_action_action_cards)[];
 }
 
 export interface allContent_content {

@@ -1,9 +1,10 @@
 import { useOnScreen } from "hook/useOnScroll";
-import React, { MutableRefObject, useRef } from "react";
+import React, { MutableRefObject, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
 import CardSection from "./CardSection";
 import TextSection from "./TextSection";
+import CardModal from "./CardModal";
 
 function Section3(): JSX.Element {
     const { action } = useSelector((state: RootState) => state.content);
@@ -12,24 +13,38 @@ function Section3(): JSX.Element {
     const isVisibleSec3 = useOnScreen(
         scrollRefSec3 as unknown as MutableRefObject<HTMLDivElement>,
     );
-
+    const [isModal, setIsModal] = useState(false);
+    const [cardSelected, setCardSelected] = useState<number>(0);
+    const item = action?.action_cards;
+    const selectedCard = item && item[cardSelected];
     return (
         <div
             className="h-screen flex flex-col w-screen pt-12 relative bg-customYellow lg:bg-white"
-            style={{ scrollSnapAlign: "start" }}
+            style={{
+                scrollSnapAlign: "start",
+            }}
         >
             <div
                 ref={
                     scrollRefSec3 as unknown as MutableRefObject<HTMLDivElement>
                 }
             >
-                <div className="">
-                    <TextSection item={action} isVisibleSec3={isVisibleSec3} />
-                    <CardSection
-                        item={action?.action_cards}
-                        isVisibleSec3={isVisibleSec3}
+                {isModal && (
+                    <CardModal
+                        setIsModal={setIsModal}
+                        isModal={isModal}
+                        selectedCard={selectedCard}
                     />
-                </div>
+                )}
+
+                <TextSection item={action} isVisibleSec3={isVisibleSec3} />
+                <CardSection
+                    isVisibleSec3={isVisibleSec3}
+                    isModal={isModal}
+                    setCardSelected={setCardSelected}
+                    setIsModal={setIsModal}
+                    item={action?.action_cards}
+                />
             </div>
         </div>
     );

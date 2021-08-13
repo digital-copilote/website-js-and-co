@@ -3,15 +3,21 @@ import { allContent_content_action_action_cards } from "__generated__/allContent
 
 function CardContent({
     item,
+    isModal,
 }: {
-    item: allContent_content_action_action_cards | null;
+    item: allContent_content_action_action_cards | null | undefined;
+    isModal: boolean;
 }): JSX.Element {
     return (
         <div>
             <div className="w-full flex items-center justify-center">
                 <span className="text-center font-bold">{item?.title}</span>
             </div>
-            <div className="hidden bg-white font-titilumWeb lg:flex flex-col z-10 lg:p-7 border border-black rounded-lg transform -translate-y-14">
+            <div
+                className={`bg-white font-titilumWeb shadow-buttonShadow lg:flex flex-col z-10 lg:p-7 border border-black rounded-lg transform -translate-y-14 ${
+                    isModal ? `flex` : `hidden`
+                }`}
+            >
                 <span className="font-bold lg:text-2xl mt-5">
                     {item?.title}
                 </span>

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { allContent_content_events } from "__generated__/allContent";
 import BlackButton from "../../../buttons/BlackButton";
 import CloseButton from "../../../buttons/CloseButton";
@@ -12,7 +12,6 @@ interface Iprops {
 }
 
 function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
-    const [animation, setAniamtion] = useState("");
     return (
         <div>
             {isOpen && (
@@ -31,10 +30,7 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                             className="w-10/12 lg:9/12 shadow-buttonShadow flex flex-col  border border-black justify-start z-50 text-black dark:text-white bg-customYellow dark:bg-component rounded-lg"
                         >
                             <div className="flex lg:hidden w-full justify-end mt-3 pr-3">
-                                <CloseButton
-                                    setIsOpen={setIsOpen}
-                                    setAnimation={setAniamtion}
-                                />
+                                <CloseButton setIsOpen={setIsOpen} />
                             </div>
                             <div className="mb-6 text-xs sm:text-xs">
                                 <div>
@@ -47,10 +43,7 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                                             backgroundRepeat: "no-repeat",
                                         }}
                                     >
-                                        <CloseButton
-                                            setIsOpen={setIsOpen}
-                                            setAnimation={setAniamtion}
-                                        />
+                                        <CloseButton setIsOpen={setIsOpen} />
                                     </div>
                                     <motion.div
                                         animate={{ opacity: 1 }}

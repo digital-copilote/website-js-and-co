@@ -3,7 +3,6 @@ import Image from "next/image";
 
 interface IProps {
     setIsOpen: Dispatch<SetStateAction<boolean>>;
-    setAnimation: Dispatch<SetStateAction<string>>;
 }
 
 function CloseButton({ setIsOpen }: IProps): JSX.Element {

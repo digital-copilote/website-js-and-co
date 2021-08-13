@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { allContent_content_action_action_cards } from "__generated__/allContent";
 
 import Card from "./Card";
-import CardContent from "./CardContent";
 
 function CardSection({
     item,

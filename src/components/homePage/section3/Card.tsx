@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import CardContent from "./CardContent";
 import { allContent_content_action_action_cards } from "__generated__/allContent";

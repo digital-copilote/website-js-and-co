@@ -1,8 +1,7 @@
 import { useOnScreen } from "hook/useOnScroll";
-import React, { MutableRefObject, useRef, useState } from "react";
+import React, { MutableRefObject, useRef } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
-import CardContent from "./CardContent";
 import CardSection from "./CardSection";
 import TextSection from "./TextSection";
 

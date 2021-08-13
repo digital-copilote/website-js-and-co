@@ -1,0 +1,68 @@
+import { motion } from "framer-motion";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import Image from "next/image";
+import CardContent from "./CardContent";
+import { allContent_content_action_action_cards } from "__generated__/allContent";
+
+interface IProps {
+    item: allContent_content_action_action_cards | null | undefined;
+    setIsModal: Dispatch<SetStateAction<boolean>>;
+    index: number;
+    setCardSelected: Dispatch<SetStateAction<number>>;
+    isModal: boolean;
+    isVisibleSec3: boolean;
+}
+
+function Card({
+    item,
+    setIsModal,
+    isModal,
+    index,
+    setCardSelected,
+    isVisibleSec3,
+}: IProps): JSX.Element {
+    const [ImgAnimation, setImgAnimation] = useState("");
+    const [textAnimation, settextAnimation] = useState("");
+    return (
+        <div
+            onMouseEnter={() => {
+                setImgAnimation(
+                    "transform transition-transform duration-1000  -translate-y-1 -translate-x-1",
+                );
+                settextAnimation(
+                    "transform transition-transform duration-1000  -translate-y-1 translate-x-1",
+                );
+            }}
+            onMouseLeave={() => {
+                setImgAnimation(
+                    "transform transition-transform duration-1000  translate-y-0 translate-x-0",
+                );
+                settextAnimation(
+                    "transform transition-transform duration-1000  translate-y-0 -translate-x-0",
+                );
+            }}
+            className={`flex flex-col items-center lg:items-start ${textAnimation} ${
+                isVisibleSec3 && `animate-fadeBottom`
+            }`}
+        >
+            <motion.button
+                onClick={() => {
+                    setIsModal(true);
+                    setCardSelected(index);
+                }}
+                className={`relative h-24 w-24 ml-3`}
+                whileTap={{ scale: 0.9 }}
+            >
+                <Image
+                    className={`z-40 ${ImgAnimation}`}
+                    src={`${item?.image}`}
+                    alt="cardIcon"
+                    layout="fill"
+                />
+            </motion.button>
+            <CardContent isModal={isModal} item={item} />
+        </div>
+    );
+}
+
+export default Card;

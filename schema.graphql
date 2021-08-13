@@ -39,34 +39,113 @@ type AdminUser {
   lastname: String!
 }
 
+input CardInput {
+  Action_Card: [ComponentCardsActionCardInput]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+type Cards {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  Action_Card: [ComponentCardsActionCard]
+  published_at: DateTime
+}
+
+type CardsAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type CardsConnection {
+  values: [Cards]
+  groupBy: CardsGroupBy
+  aggregate: CardsAggregator
+}
+
+type CardsConnectionCreated_at {
+  key: DateTime
+  connection: CardsConnection
+}
+
+type CardsConnectionId {
+  key: ID
+  connection: CardsConnection
+}
+
+type CardsConnectionPublished_at {
+  key: DateTime
+  connection: CardsConnection
+}
+
+type CardsConnectionUpdated_at {
+  key: DateTime
+  connection: CardsConnection
+}
+
+type CardsGroupBy {
+  id: [CardsConnectionId]
+  created_at: [CardsConnectionCreated_at]
+  updated_at: [CardsConnectionUpdated_at]
+  published_at: [CardsConnectionPublished_at]
+}
+
+type ComponentCardsActionCard {
+  id: ID!
+  image: String!
+  title: String!
+  text: String!
+}
+
+input ComponentCardsActionCardInput {
+  image: String!
+  title: String!
+  text: String!
+}
+
+input ComponentContentActionInput {
+  title: String
+  text: String
+  action_cards: [ComponentCardsActionCardInput]
+}
+
+type ComponentContentActions {
+  id: ID!
+  title: String
+  text: String
+  action_cards: [ComponentCardsActionCard]
+}
+
 type ComponentContentActus {
   id: ID!
-  title_1: String
-  title_2: String
-  text: String
+  title_1: String!
+  title_2: String!
+  text: String!
 }
 
 input ComponentContentActusInput {
-  title_1: String
-  title_2: String
-  text: String
+  title_1: String!
+  title_2: String!
+  text: String!
 }
 
 type ComponentContentEvent {
   id: ID!
-  title: String
-  image: String
-  date: DateTime
-  text: String
-  register: String
+  title: String!
+  image: String!
+  date: DateTime!
+  text: String!
+  register: String!
 }
 
 input ComponentContentEventInput {
-  title: String
-  image: String
-  date: DateTime
-  text: String
-  register: String
+  title: String!
+  image: String!
+  date: DateTime!
+  text: String!
+  register: String!
 }
 
 type Content {
@@ -74,24 +153,34 @@ type Content {
   created_at: DateTime!
   updated_at: DateTime!
   actu: ComponentContentActus
-  event: [ComponentContentEvent]
+  events: [ComponentContentEvent]
   primary_color: String
   secondary_color: String
   font_primary_color: String
   font_secondary_color: String
+  action: ComponentContentActions
   published_at: DateTime
 }
 
 input ContentInput {
   actu: ComponentContentActusInput
-  event: [ComponentContentEventInput]
+  events: [ComponentContentEventInput]
   primary_color: String
   secondary_color: String
   font_primary_color: String
   font_secondary_color: String
+  action: ComponentContentActionInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
+}
+
+input createCardInput {
+  data: CardInput
+}
+
+type createCardPayload {
+  card: Cards
 }
 
 input createRoleInput {
@@ -113,6 +202,14 @@ type createUserPayload {
 scalar Date
 
 scalar DateTime
+
+input deleteCardInput {
+  where: InputID
+}
+
+type deleteCardPayload {
+  card: Cards
+}
 
 type deleteContentPayload {
   content: Content
@@ -142,6 +239,27 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
+input editCardInput {
+  Action_Card: [editComponentCardsActionCardInput]
+  published_at: DateTime
+  created_by: ID
+  updated_by: ID
+}
+
+input editComponentCardsActionCardInput {
+  id: ID
+  image: String
+  title: String
+  text: String
+}
+
+input editComponentContentActionInput {
+  id: ID
+  title: String
+  text: String
+  action_cards: [editComponentCardsActionCardInput]
+}
+
 input editComponentContentActusInput {
   id: ID
   title_1: String
@@ -160,11 +278,12 @@ input editComponentContentEventInput {
 
 input editContentInput {
   actu: editComponentContentActusInput
-  event: [editComponentContentEventInput]
+  events: [editComponentContentEventInput]
   primary_color: String
   secondary_color: String
   font_primary_color: String
   font_secondary_color: String
+  action: editComponentContentActionInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -270,9 +389,12 @@ input LocaleInput {
 
 scalar Long
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Content | updateContentPayload | deleteContentPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentContentActus | ComponentContentEvent
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Cards | CardsConnection | CardsAggregator | CardsGroupBy | CardsConnectionId | CardsConnectionCreated_at | CardsConnectionUpdated_at | CardsConnectionPublished_at | createCardPayload | updateCardPayload | deleteCardPayload | Content | updateContentPayload | deleteContentPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentCardsActionCard | ComponentContentActions | ComponentContentActus | ComponentContentEvent
 
 type Mutation {
+  createCard(input: createCardInput): createCardPayload
+  updateCard(input: updateCardInput): updateCardPayload
+  deleteCard(input: deleteCardInput): deleteCardPayload
   updateContent(input: updateContentInput): updateContentPayload
   deleteContent: deleteContentPayload
   deleteFile(input: deleteFileInput): deleteFilePayload
@@ -298,6 +420,9 @@ enum PublicationState {
 }
 
 type Query {
+  card(id: ID!, publicationState: PublicationState): Cards
+  cards(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Cards]
+  cardsConnection(sort: String, limit: Int, start: Int, where: JSON): CardsConnection
   content(publicationState: PublicationState): Content
   files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
@@ -321,6 +446,15 @@ input RoleInput {
 }
 
 scalar Time
+
+input updateCardInput {
+  where: InputID
+  data: editCardInput
+}
+
+type updateCardPayload {
+  card: Cards
+}
 
 input updateContentInput {
   data: editContentInput

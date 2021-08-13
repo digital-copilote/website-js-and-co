@@ -1,0 +1,29 @@
+{
+    "nosRéseaux": {
+        "title": "Ou sommes nous ?",
+        "text": "Toulouse est notre coeur, La Cantine notre QG, Le web notre repaire.",
+        "text2": "Entrée en contact avec notre communeauté a travers nos réseaux. Devenez membre pour avoir les différents accès à nos pateformes de communication."
+    },
+    "iconRéseaux": [
+        {
+            "name": "LinkedIn",
+            "image": "https://zupimages.net/up/21/32/h938.png",
+            "link": "https://fr.linkedin.com/company/association-js-co"
+        },
+        {
+            "name": "Twitter",
+            "image": "https://zupimages.net/up/21/32/tde2.png",
+            "link": "https://twitter.com/js_and_co?lang=fr"
+        },
+        {
+            "name": "Github",
+            "image": "https://zupimages.net/up/21/32/tmyp.png",
+            "link": "https://twitter.com/js_and_co?lang=fr"
+        },
+        {
+            "name": "Slack",
+            "image": "https://zupimages.net/up/21/32/84pq.png",
+            "link": "https://twitter.com/js_and_co?lang=fr"
+        }
+    ]
+}

@@ -8,7 +8,6 @@ interface IKeyWords {
 interface IButton {
     children: string | undefined | null;
     link: string;
-    animation: string | null;
 }
 
 interface IEvent {

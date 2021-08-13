@@ -11,14 +11,16 @@ function Button(): JSX.Element {
         );
     }, []);
     return (
-        <div className="flex flex-col text-sm lg:text-xs lg:flex-row justify-center items-center w-full lg:mt-20 mt-10">
+        <div
+            className={`flex flex-col text-sm lg:text-xs lg:flex-row justify-center items-center w-full lg:mt-20 mt-10 ${animation}`}
+        >
             <div className="mx-4">
-                <BlackButton link={data.button1.link} animation={animation}>
+                <BlackButton link={data.button1.link}>
                     {data.button1.title}
                 </BlackButton>
             </div>
             <div className="mx-4">
-                <BlackButton link={data.button2.link} animation={animation}>
+                <BlackButton link={data.button2.link}>
                     {data.button2.title}
                 </BlackButton>
             </div>

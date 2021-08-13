@@ -7,84 +7,84 @@ function Vulgarisation({
     animation3,
 }: IKeyWords): JSX.Element {
     return (
-        <div className="font-bold font-titilumWeb lg:text-xl text-lg  flex justify-center mt-5 lg:mt-10">
+        <div className="font-bold font-titilumWeb lg:text-3xl text-lg  flex justify-center mt-5 lg:mt-10">
             <span
-                className={`lg:mx-4 mx-4 animate-fade  ${animation}`}
+                className={`lg:mx-2 mx-4 animate-fade  ${animation}`}
                 style={{ textShadow: textShadow }}
             >
-                v
+                V
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation2}`}
                 style={{ textShadow: textShadow }}
             >
-                u
+                U
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
-                l
+                L
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
-                g
+                G
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation}`}
                 style={{ textShadow: textShadow }}
             >
-                a
+                A
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation2}`}
                 style={{ textShadow: textShadow }}
             >
-                r
+                R
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
-                i
+                I
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation}`}
                 style={{ textShadow: textShadow }}
             >
-                s
+                S
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation2}`}
                 style={{ textShadow: textShadow }}
             >
-                a
+                A
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
-                t
+                T
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation}`}
                 style={{ textShadow: textShadow }}
             >
-                i
+                I
             </span>
             <span
                 className={`lg:mx-4 mx-2 animate-fade ${animation2}`}
                 style={{ textShadow: textShadow }}
             >
-                o
+                O
             </span>
             <span
-                className={`lg:mx-4 mx-4 animate-fade ${animation3}`}
+                className={`lg:mx-2 mx-4 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
-                n
+                N
             </span>
         </div>
     );

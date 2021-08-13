@@ -43,7 +43,7 @@ function OneEvent({
                 className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg mt-8 border animate-fade shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 rounded-lg  animate-fade shadow-cardShadow border border-black hidden lg:flex ${ImgAnimation}`}
+                    className={`w-4/12 h-36  rounded-lg  animate-fade shadow-cardShadow border border-black hidden lg:flex ${ImgAnimation}`}
                     style={{
                         backgroundImage: `url(${item?.image})`,
                         backgroundPosition: "center",

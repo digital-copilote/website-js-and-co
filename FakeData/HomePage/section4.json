@@ -18,12 +18,27 @@
         {
             "name": "Github",
             "image": "https://zupimages.net/up/21/32/tmyp.png",
-            "link": "https://twitter.com/js_and_co?lang=fr"
+            "link": "https://github.com"
         },
         {
             "name": "Slack",
             "image": "https://zupimages.net/up/21/32/84pq.png",
-            "link": "https://twitter.com/js_and_co?lang=fr"
+            "link": "https://slack.com/intl/fr-fr/  "
+        },
+        {
+            "name": "Discord",
+            "image": "https://zupimages.net/up/21/32/81g4.png",
+            "link": "https://discord.com/"
+        },
+        {
+            "name": "FaceBook",
+            "image": "https://zupimages.net/up/21/32/vjvp.png",
+            "link": "https://fr-fr.facebook.com/js.and.co.association/"
+        },
+        {
+            "name": "MeettUp",
+            "image": "https://zupimages.net/up/21/32/31h0.png",
+            "link": "https://www.meetup.com/fr-FR/JavaScript-and-Co/"
         }
     ]
 }

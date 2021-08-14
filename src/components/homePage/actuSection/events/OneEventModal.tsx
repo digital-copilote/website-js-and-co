@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { allContent_content_events } from "__generated__/allContent";
 import BlackButton from "../../../buttons/BlackButton";
-import CloseButton from "../../../buttons/CloseButton";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Iprops {
@@ -32,14 +31,14 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                         >
                             <div className="flex justify-between">
                                 <div className="flex-col">
-                                    <h2 className="w-full text-3xl font-bold mt-2">
+                                    <h2 className="w-full text-3xl font-bold mt-2 lg:pr-20">
                                         {item?.title}
                                     </h2>
                                     <h3 className="text-xl mt-3">
                                         {`Rendez-vous le ${date}`}{" "}
                                     </h3>
                                     {/* Ajouter le lieux au data envoyer par strapi URGENT !!!! */}
-                                    <p className="text-xl mt-10 font-bold">
+                                    <p className="text-xl mt-20 font-bold">
                                         Lieu du rendez-vous :
                                     </p>
                                     <p className="text-xl mt-3 font-bold">
@@ -49,7 +48,7 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                                     </p>
                                 </div>
                                 <div
-                                    className="h-52 w-6/12 rounded-lg  flex-col items-end p-5  shadow-cardShadow border border-black hidden lg:flex"
+                                    className="h-60 w-6/12 rounded-lg  flex-col items-end p-5  shadow-cardShadow border border-black hidden lg:flex"
                                     style={{
                                         backgroundImage: `url(${item?.image})`,
                                         backgroundPosition: "center",

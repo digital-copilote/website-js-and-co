@@ -1,16 +1,16 @@
-import BlackButton from "@components/buttons/BlackButton";
 import { RootState } from "src/redux/reducer";
 import { useSelector } from "react-redux";
+import YellowButton from "@components/buttons/YellowButton";
 
 function TextSection(): JSX.Element {
     const { actu } = useSelector((state: RootState) => state).content;
     return (
-        <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-widest lg:mx-10 mx-5">
+        <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
             <div className="animate-fadeRight">
                 <div className="border-b  border-black">
-                    <h2 className={`lg:text-4xl text-4xl `}>{actu?.title_1}</h2>
+                    <h2 className={`text-5xl font-bold`}>{actu?.title_1}</h2>
                     <h3
-                        className={`lg:text-lg text-ms font-bold lg:mt-5 mt-2  `}
+                        className={`lg:text-lg text-xl font-bold lg:mt-5 mt-2  `}
                     >
                         {actu?.title_2}
                     </h3>
@@ -22,11 +22,11 @@ function TextSection(): JSX.Element {
                 </p>
             </div>
             <div className="mt-8 lg:pb-7  animate-fadeRight border-b border-black">
-                <BlackButton
+                <YellowButton
                     link={"https://www.meetup.com/fr-FR/JavaScript-and-Co/"}
                 >
                     Rejoindre le meetUp
-                </BlackButton>
+                </YellowButton>
             </div>
         </div>
     );

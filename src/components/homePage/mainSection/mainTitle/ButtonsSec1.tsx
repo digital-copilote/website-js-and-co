@@ -1,6 +1,6 @@
 import BlackButton from "@components/buttons/BlackButton";
 import React, { useEffect, useState } from "react";
-import data from "../../../../../FakeData/HomePage/section1.json";
+import data from "../../../../../FakeData/HomePage/Acceuil.json";
 
 function Button(): JSX.Element {
     const [animation, setAnimation] = useState("");

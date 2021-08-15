@@ -50,7 +50,7 @@ function Card({
                     setIsModal(true);
                     setCardSelected(index);
                 }}
-                className={`relative h-24 w-24 ml-3`}
+                className={`relative z-50 h-24 w-24 ml-3`}
                 whileTap={{ scale: 0.9 }}
             >
                 <Image

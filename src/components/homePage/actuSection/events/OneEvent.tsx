@@ -1,6 +1,7 @@
 import { allContent_content_events } from "__generated__/allContent";
 import OneEventModal from "./OneEventModal";
 import { useState } from "react";
+import Image from "next/image";
 
 function OneEvent({
     item,
@@ -40,17 +41,19 @@ function OneEvent({
                     );
                 }}
                 onClick={() => setIsOpen(true)}
-                className=" text-left transition duration-500 flex justify-start fong-titilumWeb bg-customYellow rounded-lg mt-8 border animate-fade shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
+                className=" text-left transition duration-500 flex justify-start fong-titilumWeb bg-customYellow rounded-lg my-4 border shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 h-12/12 rounded-lg  animate-fade shadow-cardShadow border border-black hidden lg:flex ${ImgAnimation}`}
-                    style={{
-                        backgroundImage: `url(${item?.image})`,
-                        backgroundPosition: "center",
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                ></div>
+                    className={`w-4/12 h-12/12 animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
+                >
+                    <Image
+                        className="rounded-lg border border-black"
+                        src={`${item?.image}`}
+                        alt="EventImage"
+                        height={350}
+                        width={600}
+                    />
+                </div>
                 <div
                     className={`md:w-8/12 mr-2  p-2 flex-col ${textAnimation} text-textShad`}
                     style={{ textShadow: "2px 2px 15px rgba(0, 0, 0, 0.3)" }}

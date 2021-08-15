@@ -11,7 +11,7 @@ interface IProps {
 
 function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {
     return (
-        <div className="bg-customYellow z-50 px-10 pt-20 absolute h-screen w-screen justify-center items-center">
+        <div className="flex lg:hidden bg-customYellow z-50 pt-20 px-10 absolute h-screen w-screen justify-center">
             <motion.button
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
@@ -22,7 +22,6 @@ function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {
                 }`}
             >
                 <Image
-                    className=""
                     src={`${selectedCard?.image}`}
                     alt="cardIcon"
                     width={100}

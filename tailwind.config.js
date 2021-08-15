@@ -23,6 +23,7 @@ module.exports = {
                 fadeFast: "fadeIn ease 0.5s",
                 fadeMid: "fadeIn ease 1.5s",
                 fadeRight: "fadeInRight ease-in 0.5s",
+                fadeLeft: "fadeInLeft ease-in 0.5s",
                 fadeTop: "fadeInTop ease-in 0.5s",
                 fadeBottom: "fadeInBottom ease-in 0.5s",
             },
@@ -35,6 +36,16 @@ module.exports = {
                     "0%": {
                         opacity: 0,
                         transform: "translate(-200px, 0)",
+                    },
+                    "100%": {
+                        opacity: 1,
+                        transform: "translate(0, 0)",
+                    },
+                },
+                fadeInLeft: {
+                    "0%": {
+                        opacity: 0,
+                        transform: "translate(200px, 0)",
                     },
                     "100%": {
                         opacity: 1,

@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <Provider store={store}>
             <div
-                className="h-screen overflow-y-scroll"
+                className="h-screen w-screen overflow-y-scroll"
                 style={{ scrollSnapType: "y mandatory" }}
             >
                 <NavBar />

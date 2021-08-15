@@ -18,7 +18,7 @@ function NavBar(): JSX.Element {
                             onClick={() => router.push(item.link)}
                             className="lg:mx-4 mx-2"
                         >
-                            {item.li}
+                            {item.name}
                         </button>
                     );
                 })}

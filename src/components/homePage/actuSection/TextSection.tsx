@@ -5,7 +5,7 @@ import YellowButton from "@components/buttons/YellowButton";
 function TextSection(): JSX.Element {
     const { actu } = useSelector((state: RootState) => state).content;
     return (
-        <div className="pt-2 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
+        <div className="pt-2 lg:h-full flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
             <div className="animate-fadeRight">
                 <div className="border-b  border-black">
                     <h2 className={`text-4xl lg:text-5xl font-bold`}>

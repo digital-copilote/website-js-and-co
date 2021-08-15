@@ -7,8 +7,7 @@ import { setContent } from "src/redux/action";
 import { allContent_content } from "../__generated__/allContent";
 import { GetStaticPropsResult } from "next";
 import Section3 from "@components/homePage/section3/Section3";
-
-// import { } from "@components";
+import Section4 from "@components/homePage/section4/Section4";
 
 export function Home(content: allContent_content): JSX.Element {
     const dispatch = useDispatch();
@@ -19,6 +18,7 @@ export function Home(content: allContent_content): JSX.Element {
             <Section1 />
             <Section2 />
             <Section3 />
+            <Section4 />
         </div>
     );
 }

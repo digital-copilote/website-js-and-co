@@ -22,7 +22,9 @@ function TextSection(): JSX.Element {
                 </p>
             </div>
             <div className="mt-8 lg:pb-7  animate-fadeRight border-b border-black">
-                <BlackButton animation={null} link={""}>
+                <BlackButton
+                    link={"https://www.meetup.com/fr-FR/JavaScript-and-Co/"}
+                >
                     Rejoindre le meetUp
                 </BlackButton>
             </div>

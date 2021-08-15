@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                customYellow: "#FFDB26",
+                customYellow: "#FEDB01",
             },
             fontFamily: {
                 titilumWeb: ["Titillium Web", "sans-serif"],

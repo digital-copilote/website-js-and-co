@@ -14,7 +14,7 @@ function CardContent({
                 <span className="text-center font-bold">{item?.title}</span>
             </div>
             <div
-                className={`bg-white font-titilumWeb shadow-buttonShadow lg:flex flex-col z-10 lg:p-7 border border-black rounded-lg transform -translate-y-14 ${
+                className={`bg-white font-titilumWeb shadow-buttonShadow lg:flex flex-col z-10 lg:p-5 border border-black rounded-lg transform -translate-y-14 ${
                     isModal ? `flex` : `hidden`
                 }`}
             >

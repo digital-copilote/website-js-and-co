@@ -67,10 +67,7 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
                                             {item?.text}
                                         </p>
 
-                                        <BlackButton
-                                            link={`${item?.register}`}
-                                            animation={""}
-                                        >
+                                        <BlackButton link={`${item?.register}`}>
                                             Je m'inscrit
                                         </BlackButton>
                                     </motion.div>

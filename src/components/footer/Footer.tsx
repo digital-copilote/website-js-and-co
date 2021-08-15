@@ -47,8 +47,8 @@ function Footer(): JSX.Element {
                         <ContactForm />
                     </div>
                     <p className="text-xs text-center lg:text-left mb-5 lg:ml-5 w-full">
-                        Design by ThomasBarrial / Develop by Thomas Barrial and
-                        Julien Abbadie / Produce by @DigitialCopilote
+                        Produce by @DigitialCopilote / Develop by Thomas Barrial
+                        and Julien Abbadie / Design by ThomasBarrial
                     </p>
                 </div>
             ) : (
@@ -59,3 +59,11 @@ function Footer(): JSX.Element {
 }
 
 export default Footer;
+
+//    .--.
+//   |o_o |
+//   |:_/ |
+//  //   \ \
+// (|     | )
+// /'\_   _/`\
+// \___)=(___/

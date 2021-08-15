@@ -1,6 +1,6 @@
 import { useOnScreen } from "hook/useOnScroll";
 import React, { MutableRefObject, useRef } from "react";
-import data from "../../../../FakeData/HomePage/section4.json";
+import data from "../../../../FakeData/HomePage/RéseauxSociaux.json";
 import SocialMedia from "./SocialMedia";
 
 function Section4(): JSX.Element {
@@ -22,16 +22,16 @@ function Section4(): JSX.Element {
                         isVisibleSec4 && `animate-fadeTop`
                     }`}
                 >
-                    <h2 className="text-4xl tracking-wider lg:text-6xl">
+                    <h2 className="text-4xl tracking-wider font-bold lg:text-6xl">
                         {data.nosRéseaux.title}
                     </h2>
                     <span className="text-xl lg:text-2xl mt-5 lg:mt-10 mx-5">
                         {data.nosRéseaux.text}
                     </span>
                     <div className="flex flex-wrap items-center pb-5 justify-center border-b-2 border-customYellow mt-10 lg:mt-16">
-                        {data.iconRéseaux.map((item) => {
+                        {data.iconRéseaux.map((item, index) => {
                             return (
-                                <div className="lg:mx-5">
+                                <div key={index} className="lg:mx-5">
                                     <SocialMedia item={item} />
                                 </div>
                             );

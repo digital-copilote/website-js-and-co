@@ -15,6 +15,7 @@ function OneEventModal({ date, isOpen, item, setIsOpen }: Iprops): JSX.Element {
         <div>
             {isOpen && (
                 <div
+                    onClick={() => setIsOpen(false)}
                     className={`flex font-titilumWeb bg-white z-50 bg-opacity-80 justify-center items-center fixed inset-0 transition duration-500 `}
                 >
                     <div className="fixed inset-0 z-50 " />

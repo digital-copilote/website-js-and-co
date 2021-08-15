@@ -5,13 +5,13 @@ import YellowButton from "@components/buttons/YellowButton";
 function TextSection(): JSX.Element {
     const { actu } = useSelector((state: RootState) => state).content;
     return (
-        <div className="pt-10 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
+        <div className="pt-2 lg:h-event flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
             <div className="animate-fadeRight">
                 <div className="border-b  border-black">
-                    <h2 className={`text-5xl font-bold`}>{actu?.title_1}</h2>
-                    <h3
-                        className={`lg:text-lg text-xl font-bold lg:mt-5 mt-2  `}
-                    >
+                    <h2 className={`text-4xl lg:text-5xl font-bold`}>
+                        {actu?.title_1}
+                    </h2>
+                    <h3 className={`lg:text-lg text-xl font-bold lg:mt-5 mt-2`}>
                         {actu?.title_2}
                     </h3>
                 </div>
@@ -21,7 +21,7 @@ function TextSection(): JSX.Element {
                     {actu?.text}
                 </p>
             </div>
-            <div className="mt-8 lg:pb-7  animate-fadeRight border-b border-black">
+            <div className="mt-5 lg:pb-7  animate-fadeRight border-b border-black">
                 <YellowButton
                     link={"https://www.meetup.com/fr-FR/JavaScript-and-Co/"}
                 >

@@ -19,7 +19,7 @@ function Section3(): JSX.Element {
     const selectedCard = item && item[cardSelected];
     return (
         <div
-            className="h-screen flex flex-col w-screen pt-12 relative bg-customYellow lg:bg-white"
+            className="h-screen flex flex-col items-center w-screen pt-12 relative bg-customYellow lg:bg-white"
             style={{
                 scrollSnapAlign: "start",
             }}

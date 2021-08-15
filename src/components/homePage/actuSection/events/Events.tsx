@@ -13,7 +13,7 @@ function Events(): JSX.Element {
         );
     }
     return (
-        <div className="lg:mx-10 mx-5 h-96">
+        <div className="lg:mx-10 mx-5 h-80 lg:h-96">
             <div>
                 {events?.map((item, index) => {
                     return (

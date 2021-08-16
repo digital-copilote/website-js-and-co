@@ -17,14 +17,16 @@ function Partners(): JSX.Element {
                 ref={
                     scrollRefSec5 as unknown as MutableRefObject<HTMLDivElement>
                 }
-                className={`w-screen lg:h-96  lg:pt-32 pt-14 px-10 pb-2 lg:px-20 lg:pb-5 bg-customYellow ${
+                className={`w-screen lg:h-96  lg:pt-32 pt-14 px-10 pb-2 lg:px-60 lg:pb-5 bg-customYellow ${
                     isVisibleSec5 ? `animate-fadeTop` : ""
                 }`}
             >
                 <h2 className="font-bold mb-2 lg:mb-5 text-4xl lg:text-5xl">
                     {data.nosPartenaires.title}
                 </h2>
-                <span className="lg:text-2xl">{data.nosPartenaires.text}</span>
+                <span className="lg:text-2xl  lg:leading-10">
+                    {data.nosPartenaires.text}
+                </span>
             </div>
             <div
                 className={`flex flex-col items-center justify-center lg:flex-row transform lg:-translate-y-20 ${

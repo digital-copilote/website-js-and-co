@@ -1,3 +1,5 @@
-const withPlugins = require("next-compose-plugins");
-
-module.exports = withPlugins([], {});
+module.exports = {
+    images: {
+        domains: ["www.zupimages.net", "images.unsplash.com", "zupimages.net"],
+    },
+};

@@ -1,9 +1,13 @@
+import AboutUs from "@components/aboutPage/mainSection.tsx/AboutUs";
+import UnRéseaux from "@components/aboutPage/mainSection.tsx/unRéseaux/UnRéseaux";
+
 import React from "react";
 
 function quisommesnous(): JSX.Element {
     return (
         <div>
-            <h1>page Qui sommes Nous</h1>
+            <AboutUs />
+            <UnRéseaux />
         </div>
     );
 }

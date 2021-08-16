@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 style={{ scrollSnapType: "y mandatory" }}
             >
                 <NavBar />
-                <Component {...pageProps} />;
+                <Component {...pageProps} />
                 <Footer />
             </div>
         </Provider>

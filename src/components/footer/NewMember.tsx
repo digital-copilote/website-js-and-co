@@ -1,6 +1,6 @@
-import YellowButton from "@components/buttons/YellowButton";
 import React from "react";
 import data from "FakeData/NouveauMembres.json";
+import BlackButton from "@components/buttons/BlackButton";
 
 function NewMembers({
     isVisibleSecFooter,
@@ -23,9 +23,9 @@ function NewMembers({
                         {data.text}
                     </p>
                     <div className="mt-10">
-                        <YellowButton link={data.link}>
+                        <BlackButton link={data.link}>
                             {data.button}
-                        </YellowButton>
+                        </BlackButton>
                     </div>
                 </div>
             ) : (

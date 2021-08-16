@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "FakeData/navBar.json";
 import { useRouter } from "next/router";
+import SideBar from "./SideBar";
+import Burger from "./Burger";
 
 function NavBar(): JSX.Element {
     const router = useRouter();
+    const [isSideBar, setIsSidebar] = useState(false);
 
     return (
         <div
@@ -23,6 +26,15 @@ function NavBar(): JSX.Element {
                     );
                 })}
             </div>
+            <button
+                className="flex lg:hidden"
+                onClick={() => {
+                    setIsSidebar((c) => !c);
+                }}
+            >
+                <Burger isSideBar={isSideBar} />
+            </button>
+            {isSideBar && <SideBar data={data} setIsSidebar={setIsSidebar} />}
         </div>
     );
 }

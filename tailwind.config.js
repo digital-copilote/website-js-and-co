@@ -26,6 +26,8 @@ module.exports = {
                 fadeLeft: "fadeInLeft ease-in 0.5s",
                 fadeTop: "fadeInTop ease-in 0.5s",
                 fadeBottom: "fadeInBottom ease-in 0.5s",
+                rotateDown: "rotateDown forwards 0.5s",
+                rotateUp: "rotateUp forwards 0.5s",
             },
             keyframes: {
                 fadeIn: {
@@ -71,6 +73,14 @@ module.exports = {
                         opacity: 1,
                         transform: "translate(0, 0)",
                     },
+                },
+                rotateDown: {
+                    "0%": { transform: "rotate(0deg) translate(0, 0)" },
+                    "100%": { transform: "rotate(45deg) translate(6px, 5px)" },
+                },
+                rotateUp: {
+                    "0%": { transform: "rotate(0deg)" },
+                    "100%": { transform: "rotate(-45deg)" },
                 },
             },
             transitionDuration: {

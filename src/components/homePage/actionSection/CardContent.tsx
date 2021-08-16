@@ -18,10 +18,10 @@ function CardContent({
                     isModal ? `flex` : `hidden`
                 }`}
             >
-                <span className="font-bold lg:text-2xl mt-5">
+                <span className="hidden lg:flex font-bold lg:text-2xl mt-5">
                     {item?.title}
                 </span>
-                <span className="text-xs lg:text-xs lg:leading-7 border-b border-black pt-2 pb-5">
+                <span className="hidden lg:flex text-xs lg:text-xs lg:leading-7 border-b border-black pt-2 pb-5">
                     {item?.text}
                 </span>
             </div>

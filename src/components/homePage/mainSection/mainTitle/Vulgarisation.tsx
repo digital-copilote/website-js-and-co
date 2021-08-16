@@ -9,7 +9,7 @@ function Vulgarisation({
     return (
         <div className="font-bold font-titilumWeb lg:text-3xl text-lg  flex justify-center mt-5 lg:mt-10">
             <span
-                className={`lg:mx-2 mx-4 animate-fade  ${animation}`}
+                className={`mx-2 animate-fade  ${animation}`}
                 style={{ textShadow: textShadow }}
             >
                 V
@@ -81,7 +81,7 @@ function Vulgarisation({
                 O
             </span>
             <span
-                className={`lg:mx-2 mx-4 animate-fade ${animation3}`}
+                className={`mx-2 animate-fade ${animation3}`}
                 style={{ textShadow: textShadow }}
             >
                 N

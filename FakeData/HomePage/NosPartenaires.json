@@ -6,12 +6,12 @@
     "partenaire": [
         {
             "logo": "https://zupimages.net/up/21/32/x0bm.png",
-            "name": "La mêlée de l’adour",
+            "name": "La mêlée",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare justo eget pulvinar interdum.",
             "link": "https://www.lamelee.com/"
         },
         {
-            "logo": "https://zupimages.net/up/21/32/ip64.png",
+            "logo": "https://zupimages.net/up/21/32/goxy.png",
             "name": "Digital Copilote",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare justo eget pulvinar interdum.",
             "link": "https://digitalcopilote.io/"

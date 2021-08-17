@@ -12,6 +12,7 @@ function Footer(): JSX.Element {
     const isVisibleSecFooter = useOnScreen(
         scrollRefSecFooter as unknown as MutableRefObject<HTMLDivElement>,
     );
+
     return (
         <div
             className="lg:h-screen font-titilumWeb flex flex-col justify-between"
@@ -22,14 +23,9 @@ function Footer(): JSX.Element {
                 scrollRefSecFooter as unknown as MutableRefObject<HTMLDivElement>
             }
         >
-            <NewMembers isVisibleSecFooter={isVisibleSecFooter} />
+            <NewMembers />
             {isVisibleSecFooter ? (
-                <div
-                    className="lg:h-80 flex flex-col justify-between bg-customYellow pt-16 lg:pt-0 px-5 border border-black animate-fadeMid"
-                    style={{
-                        scrollSnapAlign: "start",
-                    }}
-                >
+                <div className="lg:h-80 flex flex-col justify-between bg-customYellow pt-16 lg:pt-0 px-5 border border-black animate-fadeMid">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center">
                         <div className="flex w-full justify-around lg:justify-start">
                             <ul className="flex w-full lg:justify-start text-xs">
@@ -44,6 +40,7 @@ function Footer(): JSX.Element {
                                 />
                             </ul>
                         </div>
+
                         <ContactForm />
                     </div>
                     <p className="text-xs text-center lg:text-left mb-5 lg:ml-5 w-full">

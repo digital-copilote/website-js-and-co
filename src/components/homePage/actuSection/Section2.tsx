@@ -24,7 +24,7 @@ function Section2(): JSX.Element {
                         <div className="lg:w-6/12 lg:h-full w-full">
                             <TextSection />
                         </div>
-                        <div className="lg:w-8/12 w-full h-screen lg:h-full  overflow-y-scroll animate-fadeLeft">
+                        <div className="lg:w-8/12 w-full h-screen lg:h-full  overflow-y-scroll animate-fadeTop">
                             <Events />
                         </div>
                     </div>

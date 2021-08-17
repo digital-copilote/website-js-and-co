@@ -16,13 +16,13 @@ function AboutUs(): JSX.Element {
         >
             <div className="text-center">
                 <h2 className="font-bold text-4xl lg:text-6xl tracking-wider animate-fadeTop">
-                    {data.title}
+                    {data.Landing.title}
                 </h2>
                 <p className="mt-10 text-xl lg:text-2xl tracking-wider border-b border-black pb-5 animate-fadeBottom">
-                    {data.text}
+                    {data.Landing.text}
                 </p>
                 <p className="text-lg lg:text-xl tracking-wider leading-9 lg:leading-10 mt-10 animate-fadeBottom">
-                    {data.text2}
+                    {data.Landing.text2}
                 </p>
             </div>
             <div className={`animate-fade mt-20 lg:pt-20 ${animation}`}>

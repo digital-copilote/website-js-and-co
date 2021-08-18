@@ -23,7 +23,7 @@ function Footer(): JSX.Element {
                 scrollRefSecFooter as unknown as MutableRefObject<HTMLDivElement>
             }
         >
-            <NewMembers />
+            {isVisibleSecFooter && <NewMembers />}
             {isVisibleSecFooter ? (
                 <div className="lg:h-80 flex flex-col justify-between bg-customYellow pt-16 lg:pt-0 px-5 border border-black animate-fadeMid">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center">

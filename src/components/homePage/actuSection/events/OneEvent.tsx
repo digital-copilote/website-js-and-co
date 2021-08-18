@@ -19,7 +19,6 @@ function OneEvent({
                 <OneEventModal
                     date={date}
                     item={item}
-                    isOpen={isOpen}
                     setIsOpen={setIsOpen}
                 ></OneEventModal>
             )}
@@ -41,10 +40,10 @@ function OneEvent({
                     );
                 }}
                 onClick={() => setIsOpen(true)}
-                className=" text-left transition duration-500 flex justify-start fong-titilumWeb bg-customYellow rounded-lg my-4 border shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
+                className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg my-4 border-2 shadow-cardShadow border-customYellow transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 h-12/12 animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
+                    className={`w-4/12 h-12/12 rounded-lg animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
                 >
                     <Image
                         className="rounded-lg border border-black"

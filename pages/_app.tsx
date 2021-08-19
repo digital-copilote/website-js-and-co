@@ -6,7 +6,6 @@ import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import store from "src/redux/store";
 import NavBar from "@components/navBar/NavBar";
-import Footer from "@components/footer/Footer";
 
 export const apolloClient = initializeApollo();
 
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             >
                 <NavBar />
                 <Component {...pageProps} />
-                <Footer />
             </div>
         </Provider>
     );

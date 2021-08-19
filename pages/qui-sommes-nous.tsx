@@ -3,6 +3,7 @@ import DesEntrepreneurs from "@components/aboutPage/DesEntrepreneurs";
 import DesFormation from "@components/aboutPage/DesFormation";
 import UneExpertise from "@components/aboutPage/UneExpertise";
 import UnRéseaux from "@components/aboutPage/UnRéseaux";
+import Footer from "@components/footer/Footer";
 
 import React from "react";
 
@@ -14,6 +15,7 @@ function quisommesnous(): JSX.Element {
             <UneExpertise />
             <DesEntrepreneurs />
             <DesFormation />
+            <Footer />
         </div>
     );
 }

@@ -7,7 +7,7 @@ function TextSection(): JSX.Element {
     return (
         <div className="pt-8 lg:h-full flex flex-col justify-between  font-titilumWeb tracking-wider lg:mx-10 mx-5">
             <div className="animate-fadeRight">
-                <div className="border-b-2 pb-2  border-customYellow">
+                <div className="border-b-2 pb-2  border-black">
                     <h2 className={`text-4xl lg:text-5xl font-bold`}>
                         {actu?.title_1}
                     </h2>
@@ -23,7 +23,7 @@ function TextSection(): JSX.Element {
                     {actu?.text}
                 </p>
             </div>
-            <div className="mt-5 lg:pb-7 animate-fadeRight border-b-2 border-customYellow">
+            <div className="mt-5 lg:pb-7 animate-fadeRight border-b-2 border-black">
                 <YellowButton
                     link={"https://www.meetup.com/fr-FR/JavaScript-and-Co/"}
                 >

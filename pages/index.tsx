@@ -9,6 +9,7 @@ import { GetStaticPropsResult } from "next";
 import Section3 from "@components/homePage/actionSection/Section3";
 import Section4 from "@components/homePage/socialMedia/Section4";
 import Partners from "@components/homePage/partners/Partners";
+import Footer from "@components/footer/Footer";
 
 export function Home(content: allContent_content): JSX.Element {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export function Home(content: allContent_content): JSX.Element {
             <Section3 />
             <Section4 />
             <Partners />
+            <Footer />
         </div>
     );
 }

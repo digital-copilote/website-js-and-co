@@ -3,7 +3,7 @@ import { allContent_content_action_action_cards } from "__generated__/allContent
 import Card from "./Card";
 
 interface IProps {
-    item: allContent_content_action_action_cards[] | undefined;
+    item: (allContent_content_action_action_cards | null)[] | null;
     setCardSelected: Dispatch<SetStateAction<number>>;
     setIsModal: Dispatch<SetStateAction<boolean>>;
     isModal: boolean;

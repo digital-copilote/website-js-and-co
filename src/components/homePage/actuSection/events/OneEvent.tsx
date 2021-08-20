@@ -1,12 +1,13 @@
-import { allContent_content_events } from "__generated__/allContent";
 import OneEventModal from "./OneEventModal";
 import { useState } from "react";
+import urlBuilder from "../../../../../hook/imageUrl";
 import Image from "next/image";
+import { allContent_content_actu_events } from "__generated__/allContent";
 
 function OneEvent({
     item,
 }: {
-    item: allContent_content_events | null;
+    item: allContent_content_actu_events | null;
 }): JSX.Element {
     const date = new Date(item?.date).toLocaleDateString();
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -47,7 +48,7 @@ function OneEvent({
                 >
                     <Image
                         className="rounded-lg border border-black"
-                        src={`${item?.image}`}
+                        src={urlBuilder(`${item?.image?.url}`)}
                         alt="EventImage"
                         height={350}
                         width={600}
@@ -57,10 +58,10 @@ function OneEvent({
                     className={`md:w-8/12 mr-2  p-2 flex-col ${textAnimation} text-textShad`}
                     style={{ textShadow: "2px 2px 15px rgba(0, 0, 0, 0.3)" }}
                 >
-                    <h3 className="text-lg font-bold">{item?.title}</h3>
+                    <h3 className="text-lg font-bold">{item?.name}</h3>
                     <h4 className="text-sm mt-1">{date}</h4>
                     <div className="h-8  pb-5 mt-2 overflow-hidden overflow-ellipsis">
-                        <p className="text-xs leading-4">{item?.text}</p>
+                        <p className="text-xs leading-4">{item?.description}</p>
                     </div>
 
                     <a className="mt-2 text-xs underline">Plus d'infos</a>

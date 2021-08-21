@@ -6,7 +6,7 @@ const initialState: allContent_content_socialMedia = {
     title_1: "",
     title_2: "",
     text: "",
-    icon: [],
+    icons: [],
 };
 
 const socialMediaSlice = createSlice({

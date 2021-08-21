@@ -331,27 +331,29 @@ type ComponentContentOurMembers {
 input ComponentContentPartnerInput {
   title_1: String
   text: String
+  partners: [ComponentCardsPartnerCardInput]
 }
 
 type ComponentContentPartners {
   id: ID!
   title_1: String
   text: String
+  partners: [ComponentCardsPartnerCard]
 }
 
 type ComponentContentSocialMedia {
   id: ID!
   title_1: String
-  title_2: String
   text: String
-  icon: [ComponentCardsSocialMedia]
+  title_2: String
+  icons: [ComponentCardsSocialMedia]
 }
 
 input ComponentContentSocialMediaInput {
   title_1: String
-  title_2: String
   text: String
-  icon: [ComponentCardsSocialMediaInput]
+  title_2: String
+  icons: [ComponentCardsSocialMediaInput]
 }
 
 type Content {
@@ -361,8 +363,8 @@ type Content {
   actu: ComponentContentActus
   action: ComponentContentActions
   socialMedia: ComponentContentSocialMedia
-  partners: ComponentContentSocialMedia
   newMember: ComponentContentNewMember
+  partners: ComponentContentPartners
   published_at: DateTime
 }
 
@@ -370,8 +372,8 @@ input ContentInput {
   actu: ComponentContentActusInput
   action: ComponentContentActionInput
   socialMedia: ComponentContentSocialMediaInput
-  partners: ComponentContentSocialMediaInput
   newMember: ComponentContentNewMemberInput
+  partners: ComponentContentPartnerInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -585,22 +587,23 @@ input editComponentContentPartnerInput {
   id: ID
   title_1: String
   text: String
+  partners: [editComponentCardsPartnerCardInput]
 }
 
 input editComponentContentSocialMediaInput {
   id: ID
   title_1: String
-  title_2: String
   text: String
-  icon: [editComponentCardsSocialMediaInput]
+  title_2: String
+  icons: [editComponentCardsSocialMediaInput]
 }
 
 input editContentInput {
   actu: editComponentContentActusInput
   action: editComponentContentActionInput
   socialMedia: editComponentContentSocialMediaInput
-  partners: editComponentContentSocialMediaInput
   newMember: editComponentContentNewMemberInput
+  partners: editComponentContentPartnerInput
   published_at: DateTime
   created_by: ID
   updated_by: ID

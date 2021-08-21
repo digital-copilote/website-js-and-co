@@ -38,13 +38,29 @@ export const GET_HOMEPAGE = gql`
                 title_1
                 title_2
                 text
-                icon {
+                icons {
                     name
                     link
                     icon {
                         url
                     }
                 }
+            }
+            partners {
+                title_1
+                text
+                partners {
+                    name
+                    description
+                    link
+                    logo {
+                        url
+                    }
+                }
+            }
+            newMember {
+                title_1
+                text
             }
         }
     }

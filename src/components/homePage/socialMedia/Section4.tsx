@@ -2,7 +2,6 @@ import { useOnScreen } from "hook/useOnScroll";
 import React, { MutableRefObject, useRef } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
-import data from "../../../../FakeData/HomePage/RéseauxSociaux.json";
 import SocialMedia from "./SocialMedia";
 
 function Section4(): JSX.Element {
@@ -11,7 +10,7 @@ function Section4(): JSX.Element {
         scrollRefSec4 as unknown as MutableRefObject<HTMLDivElement>,
     );
 
-    const { text, title_1, title_2, icon } = useSelector(
+    const { text, title_1, title_2, icons } = useSelector(
         (state: RootState) => state.socialMedia,
     );
 
@@ -36,7 +35,7 @@ function Section4(): JSX.Element {
                         {title_2}
                     </span>
                     <div className="flex flex-wrap items-center pb-5 justify-center border-b-2 border-customYellow mt-10 lg:mt-16">
-                        {icon?.map((item, index) => {
+                        {icons?.map((item, index) => {
                             return (
                                 <div key={index} className="lg:mx-5">
                                     <SocialMedia item={item} />

@@ -12,7 +12,6 @@ function UneExpertise(): JSX.Element {
     );
     const { uneExpertise } = useSelector((state: RootState) => state.aboutUs);
 
-    console.log(uneExpertise?.icon?.url);
     return (
         <div
             className="h-screen w-screen flex justify-center pt-10 px-5 lg:px-10 bg-customYellow"

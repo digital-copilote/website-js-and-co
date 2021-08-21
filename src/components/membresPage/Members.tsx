@@ -5,7 +5,6 @@ import { RootState } from "src/redux/reducer";
 
 function Members(): JSX.Element {
     const { member } = useSelector((state: RootState) => state.members);
-    console.log(member);
     return (
         <div
             className="h-screen w-screen flex flex-col justify-center font-titilumWeb bg-customYellow px-5 pt-20"

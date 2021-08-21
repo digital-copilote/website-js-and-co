@@ -1,13 +1,16 @@
 import React, { MutableRefObject, useRef } from "react";
 import Image from "next/image";
-import data from "FakeData/AboutPage/AboutUs.json";
 import { useOnScreen } from "hook/useOnScroll";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
+import urlBuilder from "hook/imageUrl";
 
 function UnRéseaux(): JSX.Element {
     const scrollRef = useRef();
     const isVisible = useOnScreen(
         scrollRef as unknown as MutableRefObject<HTMLDivElement>,
     );
+    const { unReseau } = useSelector((state: RootState) => state.aboutUs);
 
     return (
         <div
@@ -24,24 +27,29 @@ function UnRéseaux(): JSX.Element {
                     }`}
                 >
                     <h1 className="text-5xl lg:text-7xl font-bold z-30  transform translate-y-20 lg:translate-y-36 ">
-                        {data.UnRéseaux.title}
+                        {unReseau?.title}
                     </h1>
                     <h1 className="text-7xl lg:text-9xl z-10 font-bold opacity-20 text-customYellow">
-                        {data.UnRéseaux.title}
+                        {unReseau?.title}
                     </h1>
                     <p className="text-xl lg:text-2xl lg:leading-10 leading-8 my-5 lg:my-10 border-b border-black pb-10">
-                        {data.UnRéseaux.text}
+                        {unReseau?.text}
                     </p>
                 </div>
-                <Image
-                    className={`${
-                        isVisible && `animate-fadeBottom lg:animate-fadeLeft`
-                    }`}
-                    src={data.UnRéseaux.image}
-                    alt="Un Réseaux"
-                    height={350}
-                    width={350}
-                />
+                {unReseau?.icon?.url === undefined ? (
+                    ""
+                ) : (
+                    <Image
+                        className={`${
+                            isVisible &&
+                            `animate-fadeBottom lg:animate-fadeLeft`
+                        }`}
+                        src={urlBuilder(unReseau?.icon?.url as string)}
+                        alt="Un Réseaux"
+                        height={350}
+                        width={350}
+                    />
+                )}
             </div>
         </div>
     );

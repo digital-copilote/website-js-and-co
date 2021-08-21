@@ -65,3 +65,68 @@ export const GET_HOMEPAGE = gql`
         }
     }
 `;
+
+export const GET_ABOUTUS = gql`
+    query about {
+        about {
+            aboutUs {
+                title_1
+                text
+                text2
+                unReseau {
+                    title
+                    text
+                    icon {
+                        url
+                    }
+                }
+                uneExpertise {
+                    title
+                    text
+                    icon {
+                        url
+                    }
+                }
+                desEntrepreneurs {
+                    title
+                    text
+                    icon {
+                        url
+                    }
+                }
+                desFormations {
+                    title
+                    text
+                    icon {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const GET_MEMBERS = gql`
+    query members {
+        member {
+            title
+            members {
+                firstName
+                lastName
+                function
+                linkPortfolio
+                description
+                avatar {
+                    url
+                }
+                socialMedia {
+                    name
+                    link
+                    icon {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`;

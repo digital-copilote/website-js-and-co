@@ -1,12 +1,18 @@
 import { useOnScreen } from "hook/useOnScroll";
 import React, { MutableRefObject, useRef } from "react";
-import data from "FakeData/AboutPage/AboutUs.json";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
+import urlBuilder from "hook/imageUrl";
 
 function DesEntrepreneurs(): JSX.Element {
     const scrollRef4 = useRef();
     const isVisible4 = useOnScreen(
         scrollRef4 as unknown as MutableRefObject<HTMLDivElement>,
+    );
+
+    const { desEntrepreneurs } = useSelector(
+        (state: RootState) => state.aboutUs,
     );
     return (
         <div
@@ -23,24 +29,29 @@ function DesEntrepreneurs(): JSX.Element {
                     }`}
                 >
                     <h1 className="text-4xl lg:text-7xl font-bold z-30  transform  lg:translate-y-32 ">
-                        {data.Desentrepreneurs.title}
+                        {desEntrepreneurs?.title}
                     </h1>
                     <h1 className="hidden lg:flex lg:text-8xl z-10 font-bold opacity-20 text-customYellow transform lg:translate-x-20 ">
-                        {data.Desentrepreneurs.title}
+                        {desEntrepreneurs?.title}
                     </h1>
                     <p className="text-xl lg:text-2xl lg:leading-10 leading-8 my-5  lg:my-14 border-b border-black pb-10">
-                        {data.Desentrepreneurs.text}
+                        {desEntrepreneurs?.text}
                     </p>
                 </div>
-                <Image
-                    className={`${
-                        isVisible4 && `animate-fadeBottom lg:animate-fadeLeft`
-                    }`}
-                    src={data.Desentrepreneurs.image}
-                    alt="Un Réseaux"
-                    height={290}
-                    width={350}
-                />
+                {desEntrepreneurs?.icon?.url === undefined ? (
+                    ""
+                ) : (
+                    <Image
+                        className={`${
+                            isVisible4 &&
+                            `animate-fadeBottom lg:animate-fadeLeft`
+                        }`}
+                        src={urlBuilder(desEntrepreneurs?.icon?.url as string)}
+                        alt="Un Réseaux"
+                        height={290}
+                        width={350}
+                    />
+                )}
             </div>
         </div>
     );

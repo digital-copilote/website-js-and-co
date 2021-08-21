@@ -62,9 +62,9 @@ export interface allContent_content_socialMedia_icons_icon {
 
 export interface allContent_content_socialMedia_icons {
   __typename: "ComponentCardsSocialMedia";
-  name: string;
-  link: string;
-  icon: allContent_content_socialMedia_icons_icon;
+  name: string | null;
+  link: string | null;
+  icon: allContent_content_socialMedia_icons_icon | null;
 }
 
 export interface allContent_content_socialMedia {
@@ -72,7 +72,7 @@ export interface allContent_content_socialMedia {
   title_1: string | null;
   title_2: string | null;
   text: string | null;
-  icons: allContent_content_socialMedia_icons[];
+  icons: (allContent_content_socialMedia_icons | null)[] | null;
 }
 
 export interface allContent_content_partners_partners_logo {
@@ -82,17 +82,17 @@ export interface allContent_content_partners_partners_logo {
 
 export interface allContent_content_partners_partners {
   __typename: "ComponentCardsPartnerCard";
-  name: string ;
-  description: string ;
-  link: string ;
-  logo: allContent_content_partners_partners_logo;
+  name: string | null;
+  description: string | null;
+  link: string | null;
+  logo: allContent_content_partners_partners_logo | null;
 }
 
 export interface allContent_content_partners {
   __typename: "ComponentContentPartners";
   title_1: string | null;
   text: string | null;
-  partners: allContent_content_partners_partners[];
+  partners: (allContent_content_partners_partners | null)[] | null;
 }
 
 export interface allContent_content_newMember {

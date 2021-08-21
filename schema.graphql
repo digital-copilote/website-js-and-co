@@ -214,13 +214,13 @@ type ComponentCardsUneExpertiseCard {
   id: ID!
   title: String
   text: String
-  Icon: UploadFile
+  icon: UploadFile
 }
 
 input ComponentCardsUneExpertiseCardInput {
   title: String
   text: String
-  Icon: ID
+  icon: ID
 }
 
 type ComponentCardsUnReseauxCard {
@@ -287,13 +287,11 @@ input ComponentContentActusInput {
 
 input ComponentContentMemberInput {
   title: String
-  text: String
 }
 
 type ComponentContentMembers {
   id: ID!
   title: String
-  text: String
 }
 
 type ComponentContentNewMember {
@@ -524,7 +522,7 @@ input editComponentCardsUneExpertiseCardInput {
   id: ID
   title: String
   text: String
-  Icon: ID
+  icon: ID
 }
 
 input editComponentCardsUnReseauxCardInput {
@@ -563,7 +561,6 @@ input editComponentContentActusInput {
 input editComponentContentMemberInput {
   id: ID
   title: String
-  text: String
 }
 
 input editComponentContentNewMemberInput {
@@ -637,8 +634,8 @@ input editLocaleInput {
 }
 
 input editMemberInput {
-  intro: editComponentContentMemberInput
-  members: editComponentContentOurMemberInput
+  members: [editComponentContentOurMemberInput]
+  title: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -718,8 +715,8 @@ input LocaleInput {
 scalar Long
 
 input MemberInput {
-  intro: ComponentContentMemberInput
-  members: ComponentContentOurMemberInput
+  members: [ComponentContentOurMemberInput]
+  title: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -729,8 +726,8 @@ type Members {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  intro: ComponentContentMembers
-  members: ComponentContentOurMembers
+  members: [ComponentContentOurMembers]
+  title: String
   published_at: DateTime
 }
 

@@ -11,7 +11,6 @@ interface IProps {
 }
 
 function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {
-    console.log(selectedCard?.icon?.url);
     return (
         <div className="flex lg:hidden bg-customYellow z-50 pt-20 px-10 absolute h-screen w-screen justify-center">
             <motion.button

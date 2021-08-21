@@ -1,13 +1,16 @@
 import { useOnScreen } from "hook/useOnScroll";
 import React, { MutableRefObject, useRef } from "react";
 import Image from "next/image";
-import data from "FakeData/AboutPage/AboutUs.json";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
+import urlBuilder from "hook/imageUrl";
 
 function DesFormation(): JSX.Element {
     const scrollRef3 = useRef();
     const isVisible3 = useOnScreen(
         scrollRef3 as unknown as MutableRefObject<HTMLDivElement>,
     );
+    const { desFormations } = useSelector((state: RootState) => state.aboutUs);
     return (
         <div
             className="h-screen w-screen flex justify-center pt-10 px-5 lg:px-10 bg-customYellow"
@@ -23,24 +26,29 @@ function DesFormation(): JSX.Element {
                     }`}
                 >
                     <h1 className="text-5xl mt-10  lg:text-7xl font-bold z-30  transform  lg:translate-y-28 ">
-                        {data.DesFormations.title}
+                        {desFormations?.title}
                     </h1>
                     <h1 className="text-5xl hidden lg:flex lg:text-8xl z-10 font-bold opacity-10 text-black transform lg:-translate-x-24">
-                        {data.DesFormations.title}
+                        {desFormations?.title}
                     </h1>
                     <p className="text-xl lg:text-2xl lg:leading-10 leading-8 my-5 lg:my-10 border-b border-black pb-10">
-                        {data.DesFormations.text}
+                        {desFormations?.text}
                     </p>
                 </div>
-                <Image
-                    className={`${
-                        isVisible3 && `animate-fadeBottom lg:animate-fadeLeft`
-                    }`}
-                    src={data.DesFormations.image}
-                    alt="Un Réseaux"
-                    height={300}
-                    width={350}
-                />
+                {desFormations?.icon?.url === undefined ? (
+                    " "
+                ) : (
+                    <Image
+                        className={`${
+                            isVisible3 &&
+                            `animate-fadeBottom lg:animate-fadeLeft`
+                        }`}
+                        src={urlBuilder(desFormations?.icon.url as string)}
+                        alt="Un Réseaux"
+                        height={300}
+                        width={350}
+                    />
+                )}
             </div>
         </div>
     );

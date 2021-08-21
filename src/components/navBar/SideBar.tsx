@@ -7,7 +7,7 @@ function SideBar({
     data,
     setIsSidebar,
 }: {
-    data: any;
+    data: INavBar_items[];
     setIsSidebar: Dispatch<SetStateAction<boolean>>;
 }): JSX.Element {
     const router = useRouter();

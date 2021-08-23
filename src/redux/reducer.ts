@@ -4,7 +4,6 @@ import content from "./slices/homePage/notreActu";
 import action from "./slices/homePage/nosActions";
 import socialMedia from "./slices/homePage/reseauxSociaux";
 import partners from "./slices/homePage/nosPartenaires";
-import newMember from "./slices/homePage/nouveauMembres";
 import aboutUs from "./slices/aboutUs/quiSommmesNous";
 import members from "./slices/members/members";
 import footer from "./slices/footer";
@@ -13,7 +12,6 @@ const rootReducer = combineReducers({
     action,
     socialMedia,
     partners,
-    newMember,
     aboutUs,
     members,
     footer,

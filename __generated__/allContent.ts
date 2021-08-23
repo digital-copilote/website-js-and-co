@@ -72,7 +72,7 @@ export interface allContent_content_socialMedia {
   title_1: string | null;
   title_2: string | null;
   text: string | null;
-  icons: allContent_content_socialMedia_icons[];
+  icons: (allContent_content_socialMedia_icons)[];
 }
 
 export interface allContent_content_partners_partners_logo {
@@ -82,16 +82,16 @@ export interface allContent_content_partners_partners_logo {
 
 export interface allContent_content_partners_partners {
   __typename: "ComponentCardsPartnerCard";
-  name: string ;
-  description: string ;
-  link: string ;
+  name: string;
+  description: string;
+  link: string;
   logo: allContent_content_partners_partners_logo;
 }
 
 export interface allContent_content_partners {
   __typename: "ComponentContentPartners";
-  title_1: string | null;
-  text: string | null;
+  title_1: string;
+  text: string;
   partners: allContent_content_partners_partners[];
 }
 

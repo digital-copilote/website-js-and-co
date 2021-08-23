@@ -4,10 +4,19 @@ import DesFormation from "@components/aboutPage/DesFormation";
 import UneExpertise from "@components/aboutPage/UneExpertise";
 import UnRéseaux from "@components/aboutPage/UnRéseaux";
 import Footer from "@components/footer/Footer";
+import { GetStaticPropsResult } from "next";
 
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setAboutUs } from "src/redux/action";
+import { GET_ABOUTUS } from "src/services/queries";
+import { about_about_aboutUs } from "__generated__/about";
+import { apolloClient } from "./_app";
 
-function quisommesnous(): JSX.Element {
+function quisommesnous(about: about_about_aboutUs | null): JSX.Element {
+    const dispatch = useDispatch();
+
+    dispatch(setAboutUs(about));
     return (
         <div>
             <AboutUs />
@@ -18,6 +27,21 @@ function quisommesnous(): JSX.Element {
             <Footer />
         </div>
     );
+}
+
+export async function getStaticProps(): Promise<
+    GetStaticPropsResult<about_about_aboutUs>
+> {
+    try {
+        const { data } = await apolloClient.query({
+            query: GET_ABOUTUS,
+        });
+        return {
+            props: { ...data.about.aboutUs },
+        };
+    } catch (error) {
+        return { notFound: true };
+    }
 }
 
 export default quisommesnous;

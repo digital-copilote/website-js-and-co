@@ -41,17 +41,18 @@ function OneEvent({
                     );
                 }}
                 onClick={() => setIsOpen(true)}
-                className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg my-4 border shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
+                className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg my-4  transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 h-12/12 rounded-lg animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
+                    className={`rounded-lg border border-black animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
                 >
                     <Image
-                        className="rounded-lg border border-black"
+                        className="rounded-lg "
                         src={urlBuilder(`${item?.image?.url}`)}
                         alt="EventImage"
-                        height={350}
-                        width={600}
+                        height={150}
+                        width={250}
+                        priority
                     />
                 </div>
                 <div
@@ -63,8 +64,11 @@ function OneEvent({
                     <div className="h-8  pb-5 mt-2 overflow-hidden overflow-ellipsis">
                         <p className="text-xs leading-4">{item?.description}</p>
                     </div>
-
-                    <a className="mt-2 text-xs underline">Plus d'infos</a>
+                    <div className="w-full border-black border-b pb-5">
+                        <a className="mt-2 w-40 text-xs underline ">
+                            Plus d'infos
+                        </a>
+                    </div>
                 </div>
             </button>
         </div>

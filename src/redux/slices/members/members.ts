@@ -1,0 +1,24 @@
+import { createSlice } from "@reduxjs/toolkit";
+import { members } from "__generated__/members";
+
+const initialState: members = {
+    member: {
+        __typename: "Members",
+        title: "",
+        members: [],
+    },
+};
+
+const memberSlice = createSlice({
+    name: "members",
+    initialState,
+    reducers: {
+        setMembers: (state, action) => {
+            return { ...state, ...action.payload };
+        },
+    },
+});
+
+export const { setMembers } = memberSlice.actions;
+
+export default memberSlice.reducer;

@@ -18,7 +18,6 @@ function MemberModal({
         >
             <AnimatePresence>
                 <motion.div
-                    onClick={() => setIsModal(false)}
                     key="modal"
                     animate={{ height: 600, opacity: 1 }}
                     initial={{ height: 0, opacity: 0 }}
@@ -26,7 +25,20 @@ function MemberModal({
                     exit={{ height: 0 }}
                     className="w-10/12 h-full shadow-buttonShadow cursor-pointer lg:9/12  lg:p-0 lg:mx-12 flex flex-col items-center  border border-black justify-start z-50 text-black dark:text-white  bg-white rounded-lg overflow-y-auto"
                 >
-                    <div className="lg:h-36 h-28 w-full bg-customYellow"></div>
+                    <div className="lg:h-36 h-28 w-full flex items-start p-2 justify-end bg-customYellow">
+                        {" "}
+                        <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => setIsModal(false)}
+                        >
+                            <Image
+                                src={"/icons/CloseButton.png"}
+                                alt="closeButton"
+                                height={30}
+                                width={30}
+                            ></Image>
+                        </motion.button>
+                    </div>
                     <div className="lg:w-full px-5 lg:px-10 transform -translate-y-14 flex flex-col items-center lg:items-start">
                         <div
                             className="h-40 w-40 rounded-full border-4 border-white "

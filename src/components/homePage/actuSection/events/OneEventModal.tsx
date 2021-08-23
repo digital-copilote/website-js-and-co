@@ -3,6 +3,7 @@ import BlackButton from "../../../buttons/BlackButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { allContent_content_actu_events } from "__generated__/allContent";
 import urlBuilder from "hook/imageUrl";
+import Image from "next/image";
 
 interface Iprops {
     item: allContent_content_actu_events;
@@ -19,7 +20,6 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
             >
                 <AnimatePresence>
                     <motion.div
-                        onClick={() => setIsOpen(false)}
                         key="modal"
                         animate={{ height: 600, opacity: 1 }}
                         initial={{ height: 0, opacity: 0 }}
@@ -29,6 +29,17 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
                     >
                         <div className="flex justify-between">
                             <div className="flex-col">
+                                <motion.button
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    <Image
+                                        src={"/icons/CloseButton.png"}
+                                        alt="closeButton"
+                                        height={30}
+                                        width={30}
+                                    ></Image>
+                                </motion.button>
                                 <h2 className="w-full text-3xl font-bold mt-2 lg:pr-20">
                                     {item?.name}
                                 </h2>

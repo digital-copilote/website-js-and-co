@@ -47,6 +47,7 @@ function DesFormation(): JSX.Element {
                         alt="Un Réseaux"
                         height={300}
                         width={350}
+                        priority
                     />
                 )}
             </div>

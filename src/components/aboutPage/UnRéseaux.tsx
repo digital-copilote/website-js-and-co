@@ -48,6 +48,7 @@ function UnRéseaux(): JSX.Element {
                         alt="Un Réseaux"
                         height={350}
                         width={350}
+                        priority
                     />
                 )}
             </div>

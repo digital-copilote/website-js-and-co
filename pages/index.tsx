@@ -1,5 +1,4 @@
 import Section1 from "@components/homePage/mainSection/Section1";
-import Section2 from "@components/homePage/actuSection/Section2";
 import { apolloClient } from "./_app";
 import { GET_HOMEPAGE } from "src/services/queries";
 import { useDispatch } from "react-redux";
@@ -11,11 +10,12 @@ import {
     setSocialMedia,
 } from "src/redux/action";
 import { GetStaticPropsResult } from "next";
-import Section3 from "@components/homePage/actionSection/Section3";
-import Section4 from "@components/homePage/socialMedia/Section4";
+import Actions from "@components/homePage/actionSection/Actions";
+import MediaSocial from "@components/homePage/socialMedia/MediaSocial";
 import Partners from "@components/homePage/partners/Partners";
-import Footer from "@components/footer/Footer";
 import { allContent_content } from "__generated__/allContent";
+import Footer from "@components/footer/Footer";
+import Actu from "@components/homePage/actuSection/Actu";
 
 export function Home(content: allContent_content): JSX.Element {
     const dispatch = useDispatch();
@@ -28,9 +28,9 @@ export function Home(content: allContent_content): JSX.Element {
     return (
         <div>
             <Section1 />
-            <Section2 />
-            <Section3 />
-            <Section4 />
+            <Actu />
+            <Actions />
+            <MediaSocial />
             <Partners />
             <Footer />
         </div>

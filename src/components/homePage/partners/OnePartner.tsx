@@ -9,7 +9,7 @@ function OnePartner({
     item: allContent_content_partners_partners;
 }): JSX.Element {
     return (
-        <div className="lg:my-1 w-full my-2 rounded-lg py-2 lg:w-96 lg:h-80 flex flex-col items-center justify-center bg-white  border border-black shadow-buttonShadow transition duration-500 transform hover:scale-105">
+        <div className="lg:my-1 w-full my-2 rounded-xl py-2 lg:w-96 lg:h-80 flex flex-col items-center justify-center bg-white  border border-black shadow-buttonShadow transition duration-500 transform hover:scale-105">
             <a
                 href={item?.link}
                 target="_blank"

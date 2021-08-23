@@ -44,14 +44,15 @@ function OneEvent({
                 className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg my-4  transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 h-12/12 rounded-lg border border-black animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
+                    className={`rounded-lg border border-black animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
                 >
                     <Image
                         className="rounded-lg "
                         src={urlBuilder(`${item?.image?.url}`)}
                         alt="EventImage"
-                        height={350}
-                        width={600}
+                        height={150}
+                        width={250}
+                        priority
                     />
                 </div>
                 <div

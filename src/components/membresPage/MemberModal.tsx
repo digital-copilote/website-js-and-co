@@ -69,6 +69,7 @@ function MemberModal({
                                                 alt="icon"
                                                 width={50}
                                                 height={50}
+                                                priority
                                             />
                                         </a>
                                     </div>

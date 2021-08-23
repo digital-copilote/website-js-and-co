@@ -19,6 +19,8 @@ function Section3(): JSX.Element {
     const [cardSelected, setCardSelected] = useState<number>(0);
     const item = action_cards;
     const selectedCard = item && item[cardSelected];
+
+    console.log("action", isVisibleSec3);
     return (
         <div
             className="h-screen flex flex-col items-center w-screen pt-12 relative bg-customYellow lg:bg-white"

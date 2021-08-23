@@ -48,6 +48,7 @@ function UneExpertise(): JSX.Element {
                         alt="Une Expertise"
                         height={300}
                         width={350}
+                        priority
                     />
                 )}
             </div>

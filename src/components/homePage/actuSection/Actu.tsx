@@ -9,6 +9,7 @@ function Section2(): JSX.Element {
         scrollRefSec2 as unknown as MutableRefObject<HTMLDivElement>,
     );
 
+    console.log("ACTU", isVisibleSec2);
     return (
         <div
             className="h-screen w-screen flex py-10 md:px-10  lg:px-10 items-center"

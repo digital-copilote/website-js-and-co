@@ -50,6 +50,7 @@ function DesEntrepreneurs(): JSX.Element {
                         alt="Un Réseaux"
                         height={290}
                         width={350}
+                        priority
                     />
                 )}
             </div>

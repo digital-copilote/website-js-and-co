@@ -5,8 +5,8 @@ function TextSection({
     text,
     isVisibleSec3,
 }: {
-    title: string | null;
-    text: string | null;
+    title: string;
+    text: string;
     isVisibleSec3: boolean;
 }): JSX.Element {
     return (

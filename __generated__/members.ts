@@ -26,21 +26,47 @@ export interface members_member_members_socialMedia {
 
 export interface members_member_members {
   __typename: "ComponentContentOurMembers";
-  firstName: string | null;
-  lastName: string | null;
-  function: string | null;
+  firstName: string;
+  lastName: string;
+  function: string;
   linkPortfolio: string;
-  description: string | null;
+  description: string;
   avatar: members_member_members_avatar;
-  socialMedia: (members_member_members_socialMedia)[] | null;
+  socialMedia: (members_member_members_socialMedia[]);
+}
+
+export interface members_member_footer_newMember {
+  __typename: "ComponentContentNewMember";
+  title_1: string;
+  text: string;
+}
+
+export interface members_member_footer_linkSocialMedia {
+  __typename: "ComponentCardsSocialMediaFooter";
+  name: string;
+  link: string;
+}
+
+export interface members_member_footer_link_partners {
+  __typename: "ComponentCardsPartnerFooter";
+  name: string;
+  link: string;
+}
+
+export interface members_member_footer {
+  __typename: "ComponentContentFooter";
+  newMember: members_member_footer_newMember;
+  linkSocialMedia: (members_member_footer_linkSocialMedia)[];
+  link_partners: (members_member_footer_link_partners)[];
 }
 
 export interface members_member {
   __typename: "Members";
-  title: string | null;
-  members: (members_member_members)[] | null;
+  title: string;
+  members: (members_member_members)[];
+  footer: members_member_footer;
 }
 
 export interface members {
-  member: members_member | null;
+  member: members_member;
 }

@@ -14,11 +14,9 @@ function Section4(): JSX.Element {
         (state: RootState) => state.socialMedia,
     );
 
-    console.log("sm", isVisibleSec4);
-
     return (
         <div
-            className="h-screen w-screen flex pt-10 md:px-10  lg:px-10 items-center bg-white"
+            className="h-screen w-screen flex md:px-10  lg:px-10 items-center bg-white"
             style={{ scrollSnapAlign: "start" }}
         >
             {

@@ -15,14 +15,14 @@ export interface allContent_content_actu_events_image {
 export interface allContent_content_actu_events {
   __typename: "ComponentCardsEventCard";
   id: string;
-  name: string | null;
-  place: string | null;
-  adresse: string | null;
-  date: any | null;
-  description: string | null;
-  image: allContent_content_actu_events_image | null;
-  hour: any | null;
-  link_register: string | null;
+  name: string;
+  place: string;
+  adresse: string;
+  date: any;
+  description: string;
+  image: allContent_content_actu_events_image ;
+  hour: any;
+  link_register: string ;
 }
 
 export interface allContent_content_actu {
@@ -31,7 +31,7 @@ export interface allContent_content_actu {
   title_1: string;
   title_2: string;
   text: string;
-  events: (allContent_content_actu_events | null)[] | null;
+  events: (allContent_content_actu_events )[] ;
 }
 
 export interface allContent_content_action_action_cards_icon {
@@ -44,15 +44,15 @@ export interface allContent_content_action_action_cards {
   id: string;
   title: string;
   text: string;
-  icon: allContent_content_action_action_cards_icon | null;
+  icon: allContent_content_action_action_cards_icon ;
 }
 
 export interface allContent_content_action {
   __typename: "ComponentContentActions";
   id: string;
-  title: string | null;
-  text: string | null;
-  action_cards: (allContent_content_action_action_cards | null)[] | null;
+  title: string;
+  text: string;
+  action_cards: (allContent_content_action_action_cards )[] ;
 }
 
 export interface allContent_content_socialMedia_icons_icon {
@@ -64,15 +64,15 @@ export interface allContent_content_socialMedia_icons {
   __typename: "ComponentCardsSocialMedia";
   name: string;
   link: string;
-  icon: allContent_content_socialMedia_icons_icon;
+  icon: allContent_content_socialMedia_icons_icon ;
 }
 
 export interface allContent_content_socialMedia {
   __typename: "ComponentContentSocialMedia";
-  title_1: string | null;
-  title_2: string | null;
-  text: string | null;
-  icons: (allContent_content_socialMedia_icons)[];
+  title_1: string;
+  title_2: string;
+  text: string;
+  icons: (allContent_content_socialMedia_icons )[] ;
 }
 
 export interface allContent_content_partners_partners_logo {
@@ -85,31 +85,50 @@ export interface allContent_content_partners_partners {
   name: string;
   description: string;
   link: string;
-  logo: allContent_content_partners_partners_logo;
+  logo: allContent_content_partners_partners_logo ;
 }
 
 export interface allContent_content_partners {
   __typename: "ComponentContentPartners";
   title_1: string;
   text: string;
-  partners: allContent_content_partners_partners[];
+  partners: (allContent_content_partners_partners )[] ;
 }
 
-export interface allContent_content_newMember {
+export interface allContent_content_footer_newMember {
   __typename: "ComponentContentNewMember";
-  title_1: string | null;
-  text: string | null;
+  title_1: string;
+  text: string;
+}
+
+export interface allContent_content_footer_linkSocialMedia {
+  __typename: "ComponentCardsSocialMediaFooter";
+  name: string;
+  link: string;
+}
+
+export interface allContent_content_footer_link_partners {
+  __typename: "ComponentCardsPartnerFooter";
+  name: string;
+  link: string;
+}
+
+export interface allContent_content_footer {
+  __typename: "ComponentContentFooter";
+  newMember: allContent_content_footer_newMember ;
+  linkSocialMedia: (allContent_content_footer_linkSocialMedia )[] ;
+  link_partners: (allContent_content_footer_link_partners )[] ;
 }
 
 export interface allContent_content {
   __typename: "Content";
-  actu: allContent_content_actu | null;
-  action: allContent_content_action | null;
-  socialMedia: allContent_content_socialMedia | null;
-  partners: allContent_content_partners | null;
-  newMember: allContent_content_newMember | null;
+  actu: allContent_content_actu ;
+  action: allContent_content_action ;
+  socialMedia: allContent_content_socialMedia ;
+  partners: allContent_content_partners ;
+  footer: allContent_content_footer ;
 }
 
 export interface allContent {
-  content: allContent_content | null;
+  content: allContent_content ;
 }

@@ -37,11 +37,13 @@ type About {
   created_at: DateTime!
   updated_at: DateTime!
   aboutUs: ComponentContentAboutUs
+  footer: ComponentContentFooter
   published_at: DateTime
 }
 
 input AboutInput {
   aboutUs: ComponentContentAboutUsInput
+  footer: ComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -122,111 +124,133 @@ input ComponentCardsActionCardInput {
 
 type ComponentCardsDesEntrepreneursCard {
   id: ID!
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: UploadFile
 }
 
 input ComponentCardsDesEntrepreneursCardInput {
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: ID
 }
 
 type ComponentCardsDesFormationsCard {
   id: ID!
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: UploadFile
 }
 
 input ComponentCardsDesFormationsCardInput {
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: ID
 }
 
 type ComponentCardsEventCard {
   id: ID!
-  name: String
-  place: String
-  adresse: String
-  date: Date
-  description: String
+  name: String!
+  place: String!
+  adresse: String!
+  date: Date!
+  description: String!
   image: UploadFile
   link_register: String
-  hour: Time
+  hour: Time!
 }
 
 input ComponentCardsEventCardInput {
-  name: String
-  place: String
-  adresse: String
-  date: Date
-  description: String
+  name: String!
+  place: String!
+  adresse: String!
+  date: Date!
+  description: String!
   image: ID
   link_register: String
-  hour: Time
+  hour: Time!
 }
 
 type ComponentCardsMemberSocialMediaCard {
   id: ID!
-  name: String
-  link: String
+  name: String!
+  link: String!
   icon: UploadFile
 }
 
 input ComponentCardsMemberSocialMediaCardInput {
-  name: String
-  link: String
+  name: String!
+  link: String!
   icon: ID
 }
 
 type ComponentCardsPartnerCard {
   id: ID!
-  name: String
-  description: String
-  link: String
+  name: String!
+  description: String!
+  link: String!
   logo: UploadFile
 }
 
 input ComponentCardsPartnerCardInput {
-  name: String
-  description: String
-  link: String
+  name: String!
+  description: String!
+  link: String!
   logo: ID
+}
+
+type ComponentCardsPartnerFooter {
+  id: ID!
+  name: String!
+  link: String!
+}
+
+input ComponentCardsPartnerFooterInput {
+  name: String!
+  link: String!
 }
 
 type ComponentCardsSocialMedia {
   id: ID!
-  name: String
-  link: String
+  name: String!
+  link: String!
   icon: UploadFile
 }
 
+type ComponentCardsSocialMediaFooter {
+  id: ID!
+  name: String!
+  link: String!
+}
+
+input ComponentCardsSocialMediaFooterInput {
+  name: String!
+  link: String!
+}
+
 input ComponentCardsSocialMediaInput {
-  name: String
-  link: String
+  name: String!
+  link: String!
   icon: ID
 }
 
 type ComponentCardsUneExpertiseCard {
   id: ID!
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: UploadFile
 }
 
 input ComponentCardsUneExpertiseCardInput {
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: ID
 }
 
 type ComponentCardsUnReseauxCard {
   id: ID!
-  title: String
-  text: String
+  title: String!
+  text: String!
   icon: UploadFile
 }
 
@@ -238,9 +262,9 @@ input ComponentCardsUnReseauxCardInput {
 
 type ComponentContentAboutUs {
   id: ID!
-  title_1: String
-  text: String
-  text2: String
+  title_1: String!
+  text: String!
+  text2: String!
   unReseau: ComponentCardsUnReseauxCard
   uneExpertise: ComponentCardsUneExpertiseCard
   desEntrepreneurs: ComponentCardsDesEntrepreneursCard
@@ -258,15 +282,15 @@ input ComponentContentAboutUsInput {
 }
 
 input ComponentContentActionInput {
-  title: String
-  text: String
+  title: String!
+  text: String!
   action_cards: [ComponentCardsActionCardInput]
 }
 
 type ComponentContentActions {
   id: ID!
-  title: String
-  text: String
+  title: String!
+  text: String!
   action_cards: [ComponentCardsActionCard]
 }
 
@@ -285,6 +309,19 @@ input ComponentContentActusInput {
   events: [ComponentCardsEventCardInput]
 }
 
+type ComponentContentFooter {
+  id: ID!
+  newMember: ComponentContentNewMember
+  linkSocialMedia: [ComponentCardsSocialMediaFooter]
+  link_partners: [ComponentCardsPartnerFooter]
+}
+
+input ComponentContentFooterInput {
+  newMember: ComponentContentNewMemberInput
+  linkSocialMedia: [ComponentCardsSocialMediaFooterInput]
+  link_partners: [ComponentCardsPartnerFooterInput]
+}
+
 input ComponentContentMemberInput {
   title: String
 }
@@ -296,61 +333,61 @@ type ComponentContentMembers {
 
 type ComponentContentNewMember {
   id: ID!
-  title_1: String
-  text: String
+  title_1: String!
+  text: String!
 }
 
 input ComponentContentNewMemberInput {
-  title_1: String
-  text: String
+  title_1: String!
+  text: String!
 }
 
 input ComponentContentOurMemberInput {
-  firstName: String
-  lastName: String
-  function: String
-  linkPortfolio: String
-  description: String
+  firstName: String!
+  lastName: String!
+  function: String!
+  linkPortfolio: String!
+  description: String!
   avatar: ID
   socialMedia: [ComponentCardsMemberSocialMediaCardInput]
 }
 
 type ComponentContentOurMembers {
   id: ID!
-  firstName: String
-  lastName: String
-  function: String
-  linkPortfolio: String
-  description: String
+  firstName: String!
+  lastName: String!
+  function: String!
+  linkPortfolio: String!
+  description: String!
   avatar: UploadFile
   socialMedia: [ComponentCardsMemberSocialMediaCard]
 }
 
 input ComponentContentPartnerInput {
-  title_1: String
-  text: String
+  title_1: String!
+  text: String!
   partners: [ComponentCardsPartnerCardInput]
 }
 
 type ComponentContentPartners {
   id: ID!
-  title_1: String
-  text: String
+  title_1: String!
+  text: String!
   partners: [ComponentCardsPartnerCard]
 }
 
 type ComponentContentSocialMedia {
   id: ID!
-  title_1: String
-  text: String
-  title_2: String
+  title_1: String!
+  text: String!
+  title_2: String!
   icons: [ComponentCardsSocialMedia]
 }
 
 input ComponentContentSocialMediaInput {
-  title_1: String
-  text: String
-  title_2: String
+  title_1: String!
+  text: String!
+  title_2: String!
   icons: [ComponentCardsSocialMediaInput]
 }
 
@@ -361,8 +398,8 @@ type Content {
   actu: ComponentContentActus
   action: ComponentContentActions
   socialMedia: ComponentContentSocialMedia
-  newMember: ComponentContentNewMember
   partners: ComponentContentPartners
+  footer: ComponentContentFooter
   published_at: DateTime
 }
 
@@ -370,8 +407,8 @@ input ContentInput {
   actu: ComponentContentActusInput
   action: ComponentContentActionInput
   socialMedia: ComponentContentSocialMediaInput
-  newMember: ComponentContentNewMemberInput
   partners: ComponentContentPartnerInput
+  footer: ComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -451,6 +488,7 @@ type deleteUserPayload {
 
 input editAboutInput {
   aboutUs: editComponentContentAboutUsInput
+  footer: editComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -511,6 +549,18 @@ input editComponentCardsPartnerCardInput {
   logo: ID
 }
 
+input editComponentCardsPartnerFooterInput {
+  id: ID
+  name: String
+  link: String
+}
+
+input editComponentCardsSocialMediaFooterInput {
+  id: ID
+  name: String
+  link: String
+}
+
 input editComponentCardsSocialMediaInput {
   id: ID
   name: String
@@ -558,6 +608,13 @@ input editComponentContentActusInput {
   events: [editComponentCardsEventCardInput]
 }
 
+input editComponentContentFooterInput {
+  id: ID
+  newMember: editComponentContentNewMemberInput
+  linkSocialMedia: [editComponentCardsSocialMediaFooterInput]
+  link_partners: [editComponentCardsPartnerFooterInput]
+}
+
 input editComponentContentMemberInput {
   id: ID
   title: String
@@ -599,8 +656,8 @@ input editContentInput {
   actu: editComponentContentActusInput
   action: editComponentContentActionInput
   socialMedia: editComponentContentSocialMediaInput
-  newMember: editComponentContentNewMemberInput
   partners: editComponentContentPartnerInput
+  footer: editComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -636,6 +693,7 @@ input editLocaleInput {
 input editMemberInput {
   members: [editComponentContentOurMemberInput]
   title: String
+  footer: editComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -716,7 +774,8 @@ scalar Long
 
 input MemberInput {
   members: [ComponentContentOurMemberInput]
-  title: String
+  title: String!
+  footer: ComponentContentFooterInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -727,11 +786,12 @@ type Members {
   created_at: DateTime!
   updated_at: DateTime!
   members: [ComponentContentOurMembers]
-  title: String
+  title: String!
+  footer: ComponentContentFooter
   published_at: DateTime
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | About | updateAboutPayload | deleteAboutPayload | Cards | CardsConnection | CardsAggregator | CardsGroupBy | CardsConnectionId | CardsConnectionCreated_at | CardsConnectionUpdated_at | CardsConnectionPublished_at | createCardPayload | updateCardPayload | deleteCardPayload | Content | updateContentPayload | deleteContentPayload | Members | updateMemberPayload | deleteMemberPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentCardsActionCard | ComponentCardsDesEntrepreneursCard | ComponentCardsDesFormationsCard | ComponentCardsEventCard | ComponentCardsMemberSocialMediaCard | ComponentCardsPartnerCard | ComponentCardsSocialMedia | ComponentCardsUnReseauxCard | ComponentCardsUneExpertiseCard | ComponentContentAboutUs | ComponentContentActions | ComponentContentActus | ComponentContentMembers | ComponentContentNewMember | ComponentContentOurMembers | ComponentContentPartners | ComponentContentSocialMedia
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | About | updateAboutPayload | deleteAboutPayload | Cards | CardsConnection | CardsAggregator | CardsGroupBy | CardsConnectionId | CardsConnectionCreated_at | CardsConnectionUpdated_at | CardsConnectionPublished_at | createCardPayload | updateCardPayload | deleteCardPayload | Content | updateContentPayload | deleteContentPayload | Members | updateMemberPayload | deleteMemberPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentCardsActionCard | ComponentCardsDesEntrepreneursCard | ComponentCardsDesFormationsCard | ComponentCardsEventCard | ComponentCardsMemberSocialMediaCard | ComponentCardsPartnerCard | ComponentCardsPartnerFooter | ComponentCardsSocialMediaFooter | ComponentCardsSocialMedia | ComponentCardsUnReseauxCard | ComponentCardsUneExpertiseCard | ComponentContentAboutUs | ComponentContentActions | ComponentContentActus | ComponentContentFooter | ComponentContentMembers | ComponentContentNewMember | ComponentContentOurMembers | ComponentContentPartners | ComponentContentSocialMedia
 
 type Mutation {
   updateAbout(input: updateAboutInput): updateAboutPayload

@@ -14,9 +14,9 @@ export interface about_about_aboutUs_unReseau_icon {
 
 export interface about_about_aboutUs_unReseau {
   __typename: "ComponentCardsUnReseauxCard";
-  title: string | null;
-  text: string | null;
-  icon: about_about_aboutUs_unReseau_icon | null;
+  title: string;
+  text: string;
+  icon: about_about_aboutUs_unReseau_icon;
 }
 
 export interface about_about_aboutUs_uneExpertise_icon {
@@ -26,9 +26,9 @@ export interface about_about_aboutUs_uneExpertise_icon {
 
 export interface about_about_aboutUs_uneExpertise {
   __typename: "ComponentCardsUneExpertiseCard";
-  title: string | null;
-  text: string | null;
-  icon: about_about_aboutUs_uneExpertise_icon | null;
+  title: string;
+  text: string;
+  icon: about_about_aboutUs_uneExpertise_icon;
 }
 
 export interface about_about_aboutUs_desEntrepreneurs_icon {
@@ -38,9 +38,9 @@ export interface about_about_aboutUs_desEntrepreneurs_icon {
 
 export interface about_about_aboutUs_desEntrepreneurs {
   __typename: "ComponentCardsDesEntrepreneursCard";
-  title: string | null;
-  text: string | null;
-  icon: about_about_aboutUs_desEntrepreneurs_icon | null;
+  title: string;
+  text: string;
+  icon: about_about_aboutUs_desEntrepreneurs_icon ;
 }
 
 export interface about_about_aboutUs_desFormations_icon {
@@ -50,27 +50,53 @@ export interface about_about_aboutUs_desFormations_icon {
 
 export interface about_about_aboutUs_desFormations {
   __typename: "ComponentCardsDesFormationsCard";
-  title: string | null;
-  text: string | null;
-  icon: about_about_aboutUs_desFormations_icon | null;
+  title: string;
+  text: string;
+  icon: about_about_aboutUs_desFormations_icon ;
 }
 
 export interface about_about_aboutUs {
   __typename: "ComponentContentAboutUs";
-  title_1: string | null;
-  text: string | null;
-  text2: string | null;
-  unReseau: about_about_aboutUs_unReseau | null;
-  uneExpertise: about_about_aboutUs_uneExpertise | null;
-  desEntrepreneurs: about_about_aboutUs_desEntrepreneurs | null;
-  desFormations: about_about_aboutUs_desFormations | null;
+  title_1: string;
+  text: string;
+  text2: string;
+  unReseau: about_about_aboutUs_unReseau ;
+  uneExpertise: about_about_aboutUs_uneExpertise ;
+  desEntrepreneurs: about_about_aboutUs_desEntrepreneurs ;
+  desFormations: about_about_aboutUs_desFormations ;
+}
+
+export interface about_about_footer_newMember {
+  __typename: "ComponentContentNewMember";
+  title_1: string;
+  text: string;
+}
+
+export interface about_about_footer_linkSocialMedia {
+  __typename: "ComponentCardsSocialMediaFooter";
+  name: string;
+  link: string;
+}
+
+export interface about_about_footer_link_partners {
+  __typename: "ComponentCardsPartnerFooter";
+  name: string;
+  link: string;
+}
+
+export interface about_about_footer {
+  __typename: "ComponentContentFooter";
+  newMember: about_about_footer_newMember ;
+  linkSocialMedia: (about_about_footer_linkSocialMedia )[] ;
+  link_partners: (about_about_footer_link_partners)[] ;
 }
 
 export interface about_about {
   __typename: "About";
-  aboutUs: about_about_aboutUs | null;
+  aboutUs: about_about_aboutUs ;
+  footer: about_about_footer ;
 }
 
 export interface about {
-  about: about_about | null;
+  about: about_about ;
 }

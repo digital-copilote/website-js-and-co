@@ -12,7 +12,7 @@ function Partners(): JSX.Element {
     const { title_1, text, partners } = useSelector(
         (state: RootState) => state.partners,
     );
-    console.log("patners", isVisibleSec5);
+
     return (
         <div
             className="h-screen text-center font-titilumWeb w-screen flex flex-col px-5 md:px-10 lg:px-52 items-center lg:bg-white bg-customYellow"

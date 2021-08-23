@@ -5,3 +5,4 @@ export { setPartners } from "./slices/homePage/nosPartenaires";
 export { setNewMember } from "./slices/homePage/nouveauMembres";
 export { setAboutUs } from "./slices/aboutUs/quiSommmesNous";
 export { setMembers } from "./slices/members/members";
+export { setFooter } from "./slices/footer";

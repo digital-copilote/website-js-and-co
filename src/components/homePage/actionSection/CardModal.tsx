@@ -7,7 +7,7 @@ import urlBuilder from "hook/imageUrl";
 interface IProps {
     setIsModal: Dispatch<SetStateAction<boolean>>;
     isModal: boolean;
-    selectedCard: allContent_content_action_action_cards | null;
+    selectedCard: allContent_content_action_action_cards;
 }
 
 function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {

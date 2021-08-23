@@ -6,6 +6,16 @@ const initialState: members = {
         __typename: "Members",
         title: "",
         members: [],
+        footer: {
+            __typename: "ComponentContentFooter",
+            newMember: {
+                __typename: "ComponentContentNewMember",
+                title_1: "",
+                text: "",
+            },
+            linkSocialMedia: [],
+            link_partners: [],
+        },
     },
 };
 

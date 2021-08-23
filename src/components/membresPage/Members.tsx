@@ -2,15 +2,17 @@ import React from "react";
 import OneMembers from "./OneMember";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
+import NavBar from "@components/navBar/NavBar";
 
 function Members(): JSX.Element {
     const { member } = useSelector((state: RootState) => state.members);
     return (
         <div
-            className="h-screen w-screen flex flex-col justify-center font-titilumWeb bg-customYellow px-5 pt-20"
+            className="h-screen w-screen flex flex-col justify-center font-titilumWeb bg-customYellow px-5"
             style={{ scrollSnapAlign: "start" }}
         >
-            <div className="text-center pb-5 border-b border-black animate-fadeTop">
+            <NavBar />
+            <div className="text-center  m-10 pb-5 border-b border-black animate-fadeTop">
                 <h2 className="text-5xl lg:text-6xl font-bold">
                     {member?.title}
                 </h2>

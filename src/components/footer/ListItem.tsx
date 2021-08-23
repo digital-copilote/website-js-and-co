@@ -9,7 +9,7 @@ interface IProps {
         | allContent_content_socialMedia_icons[]
         | allContent_content_partners_partners[]
         | INavBar_items[];
-    title: string | null;
+    title: string;
 }
 
 function ListItem({ data, title }: IProps): JSX.Element {

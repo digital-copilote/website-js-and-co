@@ -8,15 +8,16 @@ import { GetStaticPropsResult } from "next";
 
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setAboutUs } from "src/redux/action";
+import { setAboutUs, setFooter } from "src/redux/action";
 import { GET_ABOUTUS } from "src/services/queries";
-import { about_about_aboutUs } from "__generated__/about";
+import { about_about } from "__generated__/about";
 import { apolloClient } from "./_app";
 
-function quisommesnous(about: about_about_aboutUs | null): JSX.Element {
+function quisommesnous(about: about_about): JSX.Element {
     const dispatch = useDispatch();
+    dispatch(setAboutUs(about.aboutUs));
+    dispatch(setFooter(about.footer));
 
-    dispatch(setAboutUs(about));
     return (
         <div>
             <AboutUs />
@@ -30,14 +31,14 @@ function quisommesnous(about: about_about_aboutUs | null): JSX.Element {
 }
 
 export async function getStaticProps(): Promise<
-    GetStaticPropsResult<about_about_aboutUs>
+    GetStaticPropsResult<about_about>
 > {
     try {
         const { data } = await apolloClient.query({
             query: GET_ABOUTUS,
         });
         return {
-            props: { ...data.about.aboutUs },
+            props: { ...data.about },
         };
     } catch (error) {
         return { notFound: true };

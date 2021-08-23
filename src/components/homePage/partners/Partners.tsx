@@ -1,12 +1,16 @@
 import React, { MutableRefObject, useRef } from "react";
-import data from "FakeData/HomePage/NosPartenaires.json";
 import { useOnScreen } from "hook/useOnScroll";
 import OnePartner from "./OnePartner";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
 
 function Partners(): JSX.Element {
     const scrollRefSec5 = useRef();
     const isVisibleSec5 = useOnScreen(
         scrollRefSec5 as unknown as MutableRefObject<HTMLDivElement>,
+    );
+    const { title_1, text, partners } = useSelector(
+        (state: RootState) => state.partners,
     );
     return (
         <div
@@ -22,18 +26,16 @@ function Partners(): JSX.Element {
                 }`}
             >
                 <h2 className="font-bold mb-2 lg:mb-5 text-4xl lg:text-5xl">
-                    {data.nosPartenaires.title}
+                    {title_1}
                 </h2>
-                <span className="lg:text-2xl  lg:leading-10">
-                    {data.nosPartenaires.text}
-                </span>
+                <span className="lg:text-2xl  lg:leading-10">{text}</span>
             </div>
             <div
                 className={`flex flex-col items-center justify-center lg:flex-row transform lg:-translate-y-20 ${
                     isVisibleSec5 ? `animate-fadetop` : ""
                 }`}
             >
-                {data.partenaire.map((item, index) => {
+                {partners?.map((item, index) => {
                     return (
                         <div className="lg:mx-10 lg:mt-5 mt-2" key={index}>
                             <OnePartner item={item} />

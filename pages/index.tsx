@@ -1,20 +1,30 @@
 import Section1 from "@components/homePage/mainSection/Section1";
 import Section2 from "@components/homePage/actuSection/Section2";
 import { apolloClient } from "./_app";
-import { GET_CONTENT } from "src/services/queries";
+import { GET_HOMEPAGE } from "src/services/queries";
 import { useDispatch } from "react-redux";
-import { setContent } from "src/redux/action";
-import { allContent_content } from "../__generated__/allContent";
+import {
+    setAction,
+    setActu,
+    setNewMember,
+    setPartners,
+    setSocialMedia,
+} from "src/redux/action";
 import { GetStaticPropsResult } from "next";
 import Section3 from "@components/homePage/actionSection/Section3";
 import Section4 from "@components/homePage/socialMedia/Section4";
 import Partners from "@components/homePage/partners/Partners";
 import Footer from "@components/footer/Footer";
+import { allContent_content } from "__generated__/allContent";
 
 export function Home(content: allContent_content): JSX.Element {
     const dispatch = useDispatch();
 
-    dispatch(setContent(content));
+    dispatch(setActu(content.actu));
+    dispatch(setAction(content.action));
+    dispatch(setSocialMedia(content.socialMedia));
+    dispatch(setPartners(content.partners));
+    dispatch(setNewMember(content.newMember));
     return (
         <div>
             <Section1 />
@@ -32,7 +42,7 @@ export async function getStaticProps(): Promise<
 > {
     try {
         const { data } = await apolloClient.query({
-            query: GET_CONTENT,
+            query: GET_HOMEPAGE,
         });
 
         return {

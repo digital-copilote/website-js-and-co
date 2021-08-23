@@ -1,44 +1,66 @@
 import { gql } from "@apollo/client";
-export const GET_CONTENT = gql`
+export const GET_HOMEPAGE = gql`
     query allContent {
         content {
-            id
-            created_at
-            updated_at
-            primary_color
-            secondary_color
-            font_primary_color
-            font_secondary_color
-            published_at
-            __typename
             actu {
                 id
                 title_1
                 title_2
                 text
-                __typename
-            }
-            events {
-                id
-                title
-                image
-                date
-                text
-                register
-                __typename
+                events {
+                    id
+                    name
+                    place
+                    adresse
+                    date
+                    description
+                    image {
+                        url
+                    }
+                    hour
+                    link_register
+                }
             }
             action {
                 id
                 title
                 text
-                __typename
                 action_cards {
                     id
-                    image
                     title
                     text
-                    __typename
+                    icon {
+                        url
+                    }
                 }
+            }
+            socialMedia {
+                title_1
+                title_2
+                text
+                icons {
+                    name
+                    link
+                    icon {
+                        url
+                    }
+                }
+            }
+            partners {
+                title_1
+                text
+                partners {
+                    name
+                    description
+                    link
+                    logo {
+                        url
+                    }
+                }
+            }
+            newMember {
+                title_1
+                text
             }
         }
     }

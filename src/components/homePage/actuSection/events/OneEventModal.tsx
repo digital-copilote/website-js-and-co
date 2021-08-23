@@ -1,10 +1,11 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { allContent_content_events } from "__generated__/allContent";
 import BlackButton from "../../../buttons/BlackButton";
 import { motion, AnimatePresence } from "framer-motion";
+import { allContent_content_actu_events } from "__generated__/allContent";
+import urlBuilder from "hook/imageUrl";
 
 interface Iprops {
-    item: allContent_content_events | null;
+    item: allContent_content_actu_events | null;
     date: string;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -29,32 +30,36 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
                         <div className="flex justify-between">
                             <div className="flex-col">
                                 <h2 className="w-full text-3xl font-bold mt-2 lg:pr-20">
-                                    {item?.title}
+                                    {item?.name}
                                 </h2>
                                 <h3 className="text-xl mt-3">
                                     {`Rendez-vous le ${date}`}{" "}
                                 </h3>
                                 {/* Ajouter le lieux au data envoyer par strapi URGENT !!!! */}
                                 <p className="text-xl mt-20 font-bold">
-                                    Lieu du rendez-vous :
+                                    Lieu du rendez-vous : {item?.place}
                                 </p>
                                 <p className="text-xl mt-3 font-bold">
-                                    {"NovaMêlée 27 rue  d'Aubisson - Toulouse"}
+                                    Adresse : {item?.adresse}
                                 </p>
                             </div>
                             <div
                                 className="h-60 w-6/12 rounded-lg  flex-col items-end p-5  shadow-cardShadow border border-black hidden lg:flex"
                                 style={{
-                                    backgroundImage: `url(${item?.image})`,
+                                    backgroundImage: `url(${urlBuilder(
+                                        `${item?.image?.url}`,
+                                    )})`,
                                     backgroundPosition: "center",
                                     backgroundSize: "cover",
                                     backgroundRepeat: "no-repeat",
                                 }}
                             ></div>
                         </div>
-                        <p className="text-lg mt-10 mb-10">{item?.text}</p>
+                        <p className="text-lg mt-10 mb-10">
+                            {item?.description}
+                        </p>
 
-                        <BlackButton link={`${item?.register}`}>
+                        <BlackButton link={`${item?.link_register}`}>
                             Je m'inscrit
                         </BlackButton>
                     </motion.div>

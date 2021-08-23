@@ -5,6 +5,7 @@ module.exports = {
             "images.unsplash.com",
             "zupimages.net",
             "i.pravatar.cc",
+            "localhost",
         ],
     },
 };

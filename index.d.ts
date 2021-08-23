@@ -10,10 +10,7 @@ interface IButton {
     link: string;
 }
 
-interface IEvent {
-    title: string;
-    imageUrl: string;
-    date: string;
-    description: string;
-    linkRegister: string;
+interface INavBar_items {
+    name: string;
+    link: string;
 }

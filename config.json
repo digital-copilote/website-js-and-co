@@ -1,4 +1,4 @@
 {
-    "STRAPI_URL": "http://localhost:1337",
+    "STRAPI_URL": "https://strapi-js-co-lr9mg.ondigitalocean.app",
     "STRAPI_DOMAIN": "strapi-qt33.onrender.com"
 }

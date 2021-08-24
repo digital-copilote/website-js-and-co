@@ -7,7 +7,7 @@ function Members(): JSX.Element {
     const { member } = useSelector((state: RootState) => state.members);
     return (
         <div
-            className="h-screen w-screen flex flex-col justify-center font-titilumWeb bg-customYellow px-5"
+            className="h-screen w-screen flex flex-col justify-center font-titilumWeb pt-10 bg-customYellow px-5"
             style={{ scrollSnapAlign: "start" }}
         >
             <div className="text-center  m-10 pb-5 border-b border-black animate-fadeTop">

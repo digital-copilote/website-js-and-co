@@ -16,6 +16,7 @@ function SocialMedia({
                     alt="NosRéseaux"
                     width={80}
                     height={80}
+                    priority
                 />
             </a>
         </div>

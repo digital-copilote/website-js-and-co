@@ -10,7 +10,7 @@ function Section2(): JSX.Element {
     );
     return (
         <div
-            className="h-screen w-screen flex py-10 md:px-10  lg:px-10 items-center"
+            className="h-screen w-screen flex py-10 md:px-10 pt-10 lg:pt-20 lg:px-10 items-center"
             style={{ scrollSnapAlign: "start" }}
         >
             <div

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
 import store from "src/redux/store";
+import NavBar from "@components/navBar/NavBar";
 
 export const apolloClient = initializeApollo();
 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 className="h-screen w-screen overflow-y-scroll"
                 style={{ scrollSnapType: "y mandatory" }}
             >
+                <NavBar />
                 <Component {...pageProps} />
             </div>
         </Provider>

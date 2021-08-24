@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "src/redux/reducer";
-import NavBar from "@components/navBar/NavBar";
 
 function AboutUs(): JSX.Element {
     const [animation, setAnimation] = useState("");
@@ -18,10 +17,9 @@ function AboutUs(): JSX.Element {
 
     return (
         <div
-            className="h-screen w-screen flex flex-col justify-between lg:justify-between items-center font-titilumWeb bg-customYellow px-5 "
+            className="h-screen w-screen flex flex-col justify-between pt-20 lg:pt-40 lg:justify-between items-center font-titilumWeb bg-customYellow px-5 "
             style={{ scrollSnapAlign: "start" }}
         >
-            <NavBar />
             <div className="text-center px-10 lg:px-20">
                 <h2 className="font-bold text-4xl lg:text-6xl tracking-wider animate-fadeTop">
                     {title_1}

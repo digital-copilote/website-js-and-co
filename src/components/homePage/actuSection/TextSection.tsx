@@ -26,11 +26,12 @@ function TextSection(): JSX.Element {
                 </p>
             </div>
             <div className="mt-5 lg:pb-7 animate-fadeRight border-b-2 border-black">
-                <YellowButton
-                    link={"https://www.meetup.com/fr-FR/JavaScript-and-Co/"}
+                <a
+                    href="https://www.meetup.com/fr-FR/JavaScript-and-Co/"
+                    target="_blank"
                 >
-                    Rejoindre le meetUp
-                </YellowButton>
+                    <YellowButton link={""}>Rejoindre le meetUp</YellowButton>
+                </a>
             </div>
         </div>
     );

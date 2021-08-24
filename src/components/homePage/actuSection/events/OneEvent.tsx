@@ -7,7 +7,7 @@ import { allContent_content_actu_events } from "__generated__/allContent";
 function OneEvent({
     item,
 }: {
-    item: allContent_content_actu_events | null;
+    item: allContent_content_actu_events;
 }): JSX.Element {
     const date = new Date(item?.date).toLocaleDateString();
     const [isOpen, setIsOpen] = useState<boolean>(false);

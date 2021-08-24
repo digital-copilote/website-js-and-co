@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
     setAction,
     setActu,
-    setNewMember,
+    setFooter,
     setPartners,
     setSocialMedia,
 } from "src/redux/action";
@@ -24,7 +24,7 @@ export function Home(content: allContent_content): JSX.Element {
     dispatch(setAction(content.action));
     dispatch(setSocialMedia(content.socialMedia));
     dispatch(setPartners(content.partners));
-    dispatch(setNewMember(content.newMember));
+    dispatch(setFooter(content.footer));
     return (
         <div>
             <Section1 />

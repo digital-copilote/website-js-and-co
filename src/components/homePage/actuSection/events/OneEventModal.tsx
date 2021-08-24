@@ -5,7 +5,7 @@ import { allContent_content_actu_events } from "__generated__/allContent";
 import urlBuilder from "hook/imageUrl";
 
 interface Iprops {
-    item: allContent_content_actu_events | null;
+    item: allContent_content_actu_events;
     date: string;
     setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -23,7 +23,7 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
                         key="modal"
                         animate={{ height: 600, opacity: 1 }}
                         initial={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 1 }}
                         exit={{ height: 0 }}
                         className="w-10/12 h-10/12 cursor-pointer lg:9/12 px-5 lg:p-8 lg:mx-12 shadow-buttonShadow flex flex-col  border border-black justify-start z-50 text-black dark:text-white bg-customYellow dark:bg-component rounded-lg overflow-y-auto"
                     >

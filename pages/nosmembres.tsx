@@ -3,15 +3,16 @@ import Members from "@components/membresPage/Members";
 import { GetStaticPropsResult } from "next";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setMembers } from "src/redux/action";
+import { setFooter, setMembers } from "src/redux/action";
 import { GET_MEMBERS } from "src/services/queries";
 import { members } from "__generated__/members";
 import { apolloClient } from "./_app";
 
 function nosmembres(member: members): JSX.Element {
     const dispatch = useDispatch();
-
     dispatch(setMembers(member));
+    dispatch(setFooter(member.member.footer));
+
     return (
         <div>
             <Members />

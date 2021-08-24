@@ -6,7 +6,7 @@ import { allContent_content_action_action_cards } from "__generated__/allContent
 import urlBuilder from "hook/imageUrl";
 
 interface IProps {
-    item: allContent_content_action_action_cards | null | undefined;
+    item: allContent_content_action_action_cards | undefined;
     setIsModal: Dispatch<SetStateAction<boolean>>;
     index: number;
     setCardSelected: Dispatch<SetStateAction<number>>;

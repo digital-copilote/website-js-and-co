@@ -58,9 +58,19 @@ export const GET_HOMEPAGE = gql`
                     }
                 }
             }
-            newMember {
-                title_1
-                text
+            footer {
+                newMember {
+                    title_1
+                    text
+                }
+                linkSocialMedia {
+                    name
+                    link
+                }
+                link_partners {
+                    name
+                    link
+                }
             }
         }
     }
@@ -102,6 +112,20 @@ export const GET_ABOUTUS = gql`
                     }
                 }
             }
+            footer {
+                newMember {
+                    title_1
+                    text
+                }
+                linkSocialMedia {
+                    name
+                    link
+                }
+                link_partners {
+                    name
+                    link
+                }
+            }
         }
     }
 `;
@@ -125,6 +149,20 @@ export const GET_MEMBERS = gql`
                     icon {
                         url
                     }
+                }
+            }
+            footer {
+                newMember {
+                    title_1
+                    text
+                }
+                linkSocialMedia {
+                    name
+                    link
+                }
+                link_partners {
+                    name
+                    link
                 }
             }
         }

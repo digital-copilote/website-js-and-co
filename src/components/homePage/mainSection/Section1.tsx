@@ -1,7 +1,6 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import MainTitle from "./mainTitle/MainTitle";
 import Image from "next/image";
-import NavBar from "@components/navBar/NavBar";
 
 function Section1(): JSX.Element {
     const scrollRefSec1 = useRef();
@@ -18,7 +17,6 @@ function Section1(): JSX.Element {
             className="flex flex-col justify-center items-center h-screen w-screen bg-customYellow "
             style={{ scrollSnapAlign: "start" }}
         >
-            <NavBar />
             <div>
                 <MainTitle textShadow={textShadow} />
             </div>

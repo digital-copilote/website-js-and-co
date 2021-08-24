@@ -1,4 +1,3 @@
-import NavBar from "@components/navBar/NavBar";
 import React from "react";
 
 function BecomeMembers(): JSX.Element {
@@ -9,7 +8,6 @@ function BecomeMembers(): JSX.Element {
                 scrollSnapAlign: "start",
             }}
         >
-            <NavBar />
             <iframe
                 className="w-screen h-screen lg:pt-10"
                 src="https://www.helloasso.com/associations/js-co/adhesions/adhesion-js-co-2021/widget"

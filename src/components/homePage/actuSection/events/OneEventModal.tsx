@@ -38,6 +38,7 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
                                         alt="closeButton"
                                         height={30}
                                         width={30}
+                                        priority
                                     ></Image>
                                 </motion.button>
                                 <h2 className="w-full text-3xl font-bold mt-2 lg:pr-20">
@@ -69,10 +70,9 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
                         <p className="text-lg mt-10 mb-10">
                             {item?.description}
                         </p>
-
-                        <BlackButton link={`${item?.link_register}`}>
-                            Je m'inscrit
-                        </BlackButton>
+                        <a href={`${item?.link_register}`} target="_blank">
+                            <BlackButton link={""}>Je m'inscrit</BlackButton>
+                        </a>
                     </motion.div>
                 </AnimatePresence>
             </div>

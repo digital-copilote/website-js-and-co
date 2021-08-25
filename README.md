@@ -4,7 +4,9 @@ This project was generated with [superplate](https://github.com/pankod/superplat
 
 ## Getting Started
 
-superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
+```bash
+    npm install
+```
 
 ## Available Scripts
 
@@ -25,6 +27,11 @@ superplate is a Next.js all-in-one project generator. Create your project with t
 ```bash
     npm run start
 ```
+
+## env variables.
+
+NEXT_PUBLIC_API_URL="https://strapi-js-co-lr9mg.ondigitalocean.app/graphql"
+NEXT_PUBLIC_API_TOKEN="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjI5ODAzODkxLCJleHAiOjE2MzIzOTU4OTF9.SUdRQCJLN0_JQHdcy7Lah3cqcRf4Rsf6RzqwWzh7Mgc"
 
 ## Learn More
 

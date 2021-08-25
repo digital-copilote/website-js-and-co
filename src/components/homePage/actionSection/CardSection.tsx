@@ -18,7 +18,7 @@ function CardSection({
     isVisibleSec3,
 }: IProps): JSX.Element {
     return (
-        <div className="flex flex-row justify-center lg:px-2 transform -translate-y-24 lg:-translate-y-32">
+        <div className="flex flex-row justify-center lg:px-2 transform -translate-y-24 lg:-translate-y-28">
             {item?.map((item, index) => {
                 return (
                     <div

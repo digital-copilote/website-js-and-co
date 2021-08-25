@@ -13,7 +13,7 @@ function TextSection({
         <div className="w-screen lg:h-80 xl:h-96 pt-10 xl:pt-20 font-titilumWeb px-7 md:px-40 text-center bg-customYellow">
             <div className={isVisibleSec3 ? "animate-fadeTop" : ""}>
                 <h2 className="text-5xl font-bold">{title}</h2>
-                <p className="mt-5 leading-7">{text}</p>
+                <p className="mt-5 leading-8 lg:text-xl">{text}</p>
             </div>
         </div>
     );

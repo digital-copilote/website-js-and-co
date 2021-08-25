@@ -14,7 +14,7 @@ function UnRéseaux(): JSX.Element {
 
     return (
         <div
-            className="h-screen w-screen flex justify-center pt-10 px-5 lg:px-10 bg-white"
+            className="h-screen w-screen flex justify-center  pt-10 px-5 lg:px-10 bg-white"
             style={{ scrollSnapAlign: "start" }}
         >
             <div
@@ -39,17 +39,19 @@ function UnRéseaux(): JSX.Element {
                 {unReseau?.icon?.url === undefined ? (
                     ""
                 ) : (
-                    <Image
-                        className={`${
-                            isVisible &&
-                            `animate-fadeBottom lg:animate-fadeLeft`
-                        }`}
-                        src={urlBuilder(unReseau?.icon?.url as string)}
-                        alt="Un Réseaux"
-                        height={350}
-                        width={350}
-                        priority
-                    />
+                    <div className="hidden lg:flex">
+                        <Image
+                            className={`${
+                                isVisible &&
+                                `animate-fadeBottom lg:animate-fadeLeft`
+                            }`}
+                            src={urlBuilder(unReseau?.icon?.url as string)}
+                            alt="Un Réseaux"
+                            height={350}
+                            width={350}
+                            priority
+                        />
+                    </div>
                 )}
             </div>
         </div>

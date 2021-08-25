@@ -41,17 +41,21 @@ function DesEntrepreneurs(): JSX.Element {
                 {desEntrepreneurs?.icon?.url === undefined ? (
                     ""
                 ) : (
-                    <Image
-                        className={`${
-                            isVisible4 &&
-                            `animate-fadeBottom lg:animate-fadeLeft`
-                        }`}
-                        src={urlBuilder(desEntrepreneurs?.icon?.url as string)}
-                        alt="Un Réseaux"
-                        height={290}
-                        width={350}
-                        priority
-                    />
+                    <div className="hidden lg:flex">
+                        <Image
+                            className={`${
+                                isVisible4 &&
+                                `animate-fadeBottom lg:animate-fadeLeft`
+                            }`}
+                            src={urlBuilder(
+                                desEntrepreneurs?.icon?.url as string,
+                            )}
+                            alt="Un Réseaux"
+                            height={350}
+                            width={350}
+                            priority
+                        />
+                    </div>
                 )}
             </div>
         </div>

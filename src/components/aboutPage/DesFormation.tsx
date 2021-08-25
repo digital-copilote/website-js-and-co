@@ -38,17 +38,19 @@ function DesFormation(): JSX.Element {
                 {desFormations?.icon?.url === undefined ? (
                     " "
                 ) : (
-                    <Image
-                        className={`${
-                            isVisible3 &&
-                            `animate-fadeBottom lg:animate-fadeLeft`
-                        }`}
-                        src={urlBuilder(desFormations?.icon.url as string)}
-                        alt="Un Réseaux"
-                        height={300}
-                        width={350}
-                        priority
-                    />
+                    <div className="hidden lg:flex">
+                        <Image
+                            className={`${
+                                isVisible3 &&
+                                `animate-fadeBottom lg:animate-fadeLeft`
+                            }`}
+                            src={urlBuilder(desFormations?.icon.url as string)}
+                            alt="Un Réseaux"
+                            height={300}
+                            width={350}
+                            priority
+                        />
+                    </div>
                 )}
             </div>
         </div>

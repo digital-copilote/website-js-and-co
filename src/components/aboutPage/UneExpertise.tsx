@@ -39,17 +39,19 @@ function UneExpertise(): JSX.Element {
                 {uneExpertise?.icon?.url === undefined ? (
                     ""
                 ) : (
-                    <Image
-                        className={`${
-                            isVisible2 &&
-                            `animate-fadeBottom lg:animate-fadeLeft`
-                        }`}
-                        src={urlBuilder(uneExpertise?.icon?.url as string)}
-                        alt="Une Expertise"
-                        height={300}
-                        width={350}
-                        priority
-                    />
+                    <div className="hidden lg:flex">
+                        <Image
+                            className={`${
+                                isVisible2 &&
+                                `animate-fadeBottom lg:animate-fadeLeft`
+                            }`}
+                            src={urlBuilder(uneExpertise?.icon?.url as string)}
+                            alt="Une Expertise"
+                            height={300}
+                            width={350}
+                            priority
+                        />
+                    </div>
                 )}
             </div>
         </div>

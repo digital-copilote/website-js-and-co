@@ -13,7 +13,6 @@ function MemberModal({
 }): JSX.Element {
     return (
         <div
-            onClick={() => setIsModal(false)}
             className={`flex font-titilumWeb bg-white bg-opacity-80 z-50 justify-center items-center fixed inset-0 transition duration-500 `}
         >
             <AnimatePresence>
@@ -58,7 +57,7 @@ function MemberModal({
 
                         <h3 className="text-xl lg:text-3xl">{item.function}</h3>
                         <a
-                            className="text-xs lg:text-lg mt-2 lg:mt-5"
+                            className="text-xs font-bold lg:text-lg mt-2 lg:mt-5"
                             href={item.linkPortfolio}
                             target="_blank"
                         >

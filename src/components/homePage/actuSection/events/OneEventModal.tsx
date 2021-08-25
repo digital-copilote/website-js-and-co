@@ -15,7 +15,6 @@ function OneEventModal({ date, item, setIsOpen }: Iprops): JSX.Element {
     return (
         <div>
             <div
-                onClick={() => setIsOpen(false)}
                 className={`flex font-titilumWeb bg-white z-50 bg-opacity-80 justify-center items-center fixed inset-0 transition duration-500 `}
             >
                 <AnimatePresence>

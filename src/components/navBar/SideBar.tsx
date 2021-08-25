@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
 function SideBar({
@@ -9,8 +8,6 @@ function SideBar({
     data: INavBar_items[];
     setIsSidebar: Dispatch<SetStateAction<boolean>>;
 }): JSX.Element {
-    const router = useRouter();
-
     return (
         <motion.div
             className={`bg-customYellow h-screen animate-fadeRight z-50 `}
@@ -21,9 +18,7 @@ function SideBar({
                         <a
                             href={item.link}
                             key={index}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                router.push(item.link);
+                            onClick={() => {
                                 setIsSidebar((c) => !c);
                             }}
                             className="lg:mx-4 mx-2 my-5 text-xl font-bold text-left"

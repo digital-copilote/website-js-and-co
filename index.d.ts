@@ -6,14 +6,11 @@ interface IKeyWords {
 }
 
 interface IButton {
-    children: string | undefined | null;
+    children: string | undefined;
     link: string;
 }
 
-interface IEvent {
-    title: string;
-    imageUrl: string;
-    date: string;
-    description: string;
-    linkRegister: string;
+interface INavBar_items {
+    name: string;
+    link: string;
 }

@@ -5,7 +5,7 @@ function CardContent({
     item,
     isModal,
 }: {
-    item: allContent_content_action_action_cards | null | undefined;
+    item: allContent_content_action_action_cards | undefined;
     isModal: boolean;
 }): JSX.Element {
     return (

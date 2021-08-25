@@ -1,6 +1,7 @@
 import { useOnScreen } from "hook/useOnScroll";
 import React, { MutableRefObject, useRef } from "react";
-import data from "../../../../FakeData/HomePage/RéseauxSociaux.json";
+import { useSelector } from "react-redux";
+import { RootState } from "src/redux/reducer";
 import SocialMedia from "./SocialMedia";
 
 function Section4(): JSX.Element {
@@ -8,9 +9,14 @@ function Section4(): JSX.Element {
     const isVisibleSec4 = useOnScreen(
         scrollRefSec4 as unknown as MutableRefObject<HTMLDivElement>,
     );
+
+    const { text, title_1, title_2, icons } = useSelector(
+        (state: RootState) => state.socialMedia,
+    );
+
     return (
         <div
-            className="h-screen w-screen flex pt-10 md:px-10  lg:px-10 items-center bg-white"
+            className="h-screen w-screen flex md:px-10  lg:px-10 items-center bg-white"
             style={{ scrollSnapAlign: "start" }}
         >
             {
@@ -23,13 +29,13 @@ function Section4(): JSX.Element {
                     }`}
                 >
                     <h2 className="text-4xl tracking-wider font-bold lg:text-6xl">
-                        {data.nosRéseaux.title}
+                        {title_1}
                     </h2>
                     <span className="text-xl lg:text-2xl mt-5 lg:mt-10 mx-5">
-                        {data.nosRéseaux.text}
+                        {title_2}
                     </span>
                     <div className="flex flex-wrap items-center pb-5 justify-center border-b-2 border-customYellow mt-10 lg:mt-16">
-                        {data.iconRéseaux.map((item, index) => {
+                        {icons?.map((item, index) => {
                             return (
                                 <div key={index} className="lg:mx-5">
                                     <SocialMedia item={item} />
@@ -37,9 +43,7 @@ function Section4(): JSX.Element {
                             );
                         })}
                     </div>
-                    <span className="mt-10 text-lg lg:text-2xl">
-                        {data.nosRéseaux.text2}
-                    </span>
+                    <span className="mt-10 text-lg lg:text-2xl">{text}</span>
                 </div>
             }
         </div>

@@ -1,26 +1,38 @@
 import Section1 from "@components/homePage/mainSection/Section1";
-import Section2 from "@components/homePage/actuSection/Section2";
 import { apolloClient } from "./_app";
-import { GET_CONTENT } from "src/services/queries";
+import { GET_HOMEPAGE } from "src/services/queries";
 import { useDispatch } from "react-redux";
-import { setContent } from "src/redux/action";
-import { allContent_content } from "../__generated__/allContent";
+import {
+    setAction,
+    setActu,
+    setFooter,
+    setPartners,
+    setSocialMedia,
+} from "src/redux/action";
 import { GetStaticPropsResult } from "next";
-import Section3 from "@components/homePage/actionSection/Section3";
-import Section4 from "@components/homePage/socialMedia/Section4";
+import Actions from "@components/homePage/actionSection/Actions";
+import MediaSocial from "@components/homePage/socialMedia/MediaSocial";
 import Partners from "@components/homePage/partners/Partners";
+import { allContent_content } from "__generated__/allContent";
+import Footer from "@components/footer/Footer";
+import Actu from "@components/homePage/actuSection/Actu";
 
 export function Home(content: allContent_content): JSX.Element {
     const dispatch = useDispatch();
 
-    dispatch(setContent(content));
+    dispatch(setActu(content.actu));
+    dispatch(setAction(content.action));
+    dispatch(setSocialMedia(content.socialMedia));
+    dispatch(setPartners(content.partners));
+    dispatch(setFooter(content.footer));
     return (
         <div>
             <Section1 />
-            <Section2 />
-            <Section3 />
-            <Section4 />
+            <Actu />
+            <Actions />
+            <MediaSocial />
             <Partners />
+            <Footer />
         </div>
     );
 }
@@ -30,7 +42,7 @@ export async function getStaticProps(): Promise<
 > {
     try {
         const { data } = await apolloClient.query({
-            query: GET_CONTENT,
+            query: GET_HOMEPAGE,
         });
 
         return {

@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-        domains: ["www.zupimages.net", "images.unsplash.com", "zupimages.net"],
+        domains: ["localhost", "strapi-js-co-lr9mg.ondigitalocean.app"],
     },
 };

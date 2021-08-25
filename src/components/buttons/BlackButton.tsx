@@ -11,7 +11,6 @@ function BlackButton({ children, link }: IButton): JSX.Element {
             onClick={() => router.push(link)}
             className={`w-52 lg:w-52 p-1 my-4 text-sm  lg:my-0 animate-fade shadow-buttonShadow bg-black rounded-md text-customYellow transform hover:scale-105 `}
         >
-            {/* data to fetch ref to section1.json files */}
             {children}
         </motion.button>
     );

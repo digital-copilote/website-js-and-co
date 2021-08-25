@@ -1,12 +1,14 @@
 import React from "react";
 import { AppProps } from "next/app";
+import { initializeApollo } from "src/services";
+import { Provider } from "react-redux";
 import "tailwindcss/tailwind.css";
 import "@styles/global.scss";
-import NavBar from "@components/navBar/NavBar";
-import { initializeApollo } from "src/services";
-export const apolloClient = initializeApollo();
-import { Provider } from "react-redux";
 import store from "src/redux/store";
+import NavBar from "@components/navBar/NavBar";
+
+export const apolloClient = initializeApollo();
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <Provider store={store}>
@@ -15,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                 style={{ scrollSnapType: "y mandatory" }}
             >
                 <NavBar />
-                <Component {...pageProps} />;
+                <Component {...pageProps} />
             </div>
         </Provider>
     );

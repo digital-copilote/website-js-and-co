@@ -2,11 +2,12 @@ import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { allContent_content_action_action_cards } from "__generated__/allContent";
+import urlBuilder from "hook/imageUrl";
 
 interface IProps {
     setIsModal: Dispatch<SetStateAction<boolean>>;
     isModal: boolean;
-    selectedCard: allContent_content_action_action_cards | undefined;
+    selectedCard: allContent_content_action_action_cards;
 }
 
 function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {
@@ -22,7 +23,7 @@ function CardModal({ setIsModal, isModal, selectedCard }: IProps): JSX.Element {
                 }`}
             >
                 <Image
-                    src={`${selectedCard?.image}`}
+                    src={urlBuilder(`${selectedCard?.icon?.url}`)}
                     alt="cardIcon"
                     width={100}
                     height={100}

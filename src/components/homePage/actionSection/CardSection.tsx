@@ -3,7 +3,7 @@ import { allContent_content_action_action_cards } from "__generated__/allContent
 import Card from "./Card";
 
 interface IProps {
-    item: allContent_content_action_action_cards[] | undefined;
+    item: allContent_content_action_action_cards[];
     setCardSelected: Dispatch<SetStateAction<number>>;
     setIsModal: Dispatch<SetStateAction<boolean>>;
     isModal: boolean;
@@ -18,7 +18,7 @@ function CardSection({
     isVisibleSec3,
 }: IProps): JSX.Element {
     return (
-        <div className="flex flex-row justify-center lg:px-2 transform -translate-y-24 lg:-translate-y-32">
+        <div className="flex flex-row justify-center lg:px-2 transform -translate-y-24 lg:-translate-y-28">
             {item?.map((item, index) => {
                 return (
                     <div

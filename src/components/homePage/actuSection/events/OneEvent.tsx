@@ -1,12 +1,13 @@
-import { allContent_content_events } from "__generated__/allContent";
 import OneEventModal from "./OneEventModal";
 import { useState } from "react";
+import urlBuilder from "../../../../../hook/imageUrl";
 import Image from "next/image";
+import { allContent_content_actu_events } from "__generated__/allContent";
 
 function OneEvent({
     item,
 }: {
-    item: allContent_content_events | null;
+    item: allContent_content_actu_events;
 }): JSX.Element {
     const date = new Date(item?.date).toLocaleDateString();
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -19,7 +20,6 @@ function OneEvent({
                 <OneEventModal
                     date={date}
                     item={item}
-                    isOpen={isOpen}
                     setIsOpen={setIsOpen}
                 ></OneEventModal>
             )}
@@ -41,30 +41,34 @@ function OneEvent({
                     );
                 }}
                 onClick={() => setIsOpen(true)}
-                className=" text-left transition duration-500 flex justify-start fong-titilumWeb bg-customYellow rounded-lg my-4 border shadow-cardShadow border-black transform hover:-translate-y-1 hover:scale-105"
+                className=" text-left transition duration-500 flex justify-start fong-titilumWeb rounded-lg my-4  transform hover:-translate-y-1 hover:scale-105"
             >
                 <div
-                    className={`w-4/12 h-12/12 animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
+                    className={`rounded-lg border border-black animate-fade shadow-cardShadow hidden lg:flex ${ImgAnimation}`}
                 >
                     <Image
-                        className="rounded-lg border border-black"
-                        src={`${item?.image}`}
+                        className="rounded-lg "
+                        src={urlBuilder(`${item?.image?.url}`)}
                         alt="EventImage"
-                        height={350}
-                        width={600}
+                        height={150}
+                        width={250}
+                        priority
                     />
                 </div>
                 <div
                     className={`md:w-8/12 mr-2  p-2 flex-col ${textAnimation} text-textShad`}
                     style={{ textShadow: "2px 2px 15px rgba(0, 0, 0, 0.3)" }}
                 >
-                    <h3 className="text-lg font-bold">{item?.title}</h3>
+                    <h3 className="text-lg font-bold">{item?.name}</h3>
                     <h4 className="text-sm mt-1">{date}</h4>
                     <div className="h-8  pb-5 mt-2 overflow-hidden overflow-ellipsis">
-                        <p className="text-xs leading-4">{item?.text}</p>
+                        <p className="text-xs leading-4">{item?.description}</p>
                     </div>
-
-                    <a className="mt-2 text-xs underline">Plus d'infos</a>
+                    <div className="w-full border-black border-b pb-5">
+                        <a className="mt-2 w-40 text-xs underline ">
+                            Plus d'infos
+                        </a>
+                    </div>
                 </div>
             </button>
         </div>

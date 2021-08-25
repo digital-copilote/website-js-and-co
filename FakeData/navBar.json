@@ -1,14 +1,18 @@
 [
     {
-        "li": "Acceuil",
+        "name": "Acceuil",
         "link": "/"
     },
     {
-        "li": "Qui sommes nous ?",
-        "link": "/quisommesnous"
+        "name": "Qui sommes nous ?",
+        "link": "/qui-sommes-nous"
     },
     {
-        "li": "Nos membres",
+        "name": "Nos membres",
         "link": "/nosmembres"
+    },
+    {
+        "name": "Devenir Membre",
+        "link": "/devenir-membre"
     }
 ]

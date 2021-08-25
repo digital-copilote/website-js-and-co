@@ -3,9 +3,10 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import Image from "next/image";
 import CardContent from "./CardContent";
 import { allContent_content_action_action_cards } from "__generated__/allContent";
+import urlBuilder from "hook/imageUrl";
 
 interface IProps {
-    item: allContent_content_action_action_cards | null | undefined;
+    item: allContent_content_action_action_cards | undefined;
     setIsModal: Dispatch<SetStateAction<boolean>>;
     index: number;
     setCardSelected: Dispatch<SetStateAction<number>>;
@@ -55,7 +56,7 @@ function Card({
             >
                 <Image
                     className={`z-40 ${ImgAnimation}`}
-                    src={`${item?.image}`}
+                    src={urlBuilder(`${item?.icon?.url}`)}
                     alt="cardIcon"
                     layout="fill"
                 />

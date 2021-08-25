@@ -8,11 +8,9 @@ function Section2(): JSX.Element {
     const isVisibleSec2 = useOnScreen(
         scrollRefSec2 as unknown as MutableRefObject<HTMLDivElement>,
     );
-    console.log(isVisibleSec2);
-
     return (
         <div
-            className="h-screen w-screen flex pt-10 md:px-10  lg:px-10 items-center"
+            className="h-screen w-screen flex py-10 md:px-10 pt-10 lg:pt-20 lg:px-10 items-center"
             style={{ scrollSnapAlign: "start" }}
         >
             <div
@@ -21,11 +19,11 @@ function Section2(): JSX.Element {
                 }
             >
                 {isVisibleSec2 && (
-                    <div className="flex flex-col lg:flex-row h-screen lg:pt-16 py-10">
-                        <div className="lg:w-6/12 w-full">
+                    <div className="flex flex-col lg:flex-row h-screen  py-10">
+                        <div className="lg:w-6/12 lg:h-full w-full">
                             <TextSection />
                         </div>
-                        <div className="lg:w-8/12 w-full h-screen lg:h-event pb-20 overflow-y-scroll animate-fadeLeft">
+                        <div className="lg:w-8/12 w-full h-screen lg:h-full  overflow-y-scroll animate-fadeTop">
                             <Events />
                         </div>
                     </div>

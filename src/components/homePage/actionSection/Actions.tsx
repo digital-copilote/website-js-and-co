@@ -7,7 +7,9 @@ import TextSection from "./TextSection";
 import CardModal from "./CardModal";
 
 function Section3(): JSX.Element {
-    const { action } = useSelector((state: RootState) => state.content);
+    const { title, text, action_cards } = useSelector(
+        (state: RootState) => state.action,
+    );
 
     const scrollRefSec3 = useRef();
     const isVisibleSec3 = useOnScreen(
@@ -15,11 +17,11 @@ function Section3(): JSX.Element {
     );
     const [isModal, setIsModal] = useState(false);
     const [cardSelected, setCardSelected] = useState<number>(0);
-    const item = action?.action_cards;
+    const item = action_cards;
     const selectedCard = item && item[cardSelected];
     return (
         <div
-            className="h-screen flex flex-col items-center w-screen pt-12 relative bg-customYellow lg:bg-white"
+            className="h-screen flex flex-col items-center w-screen pt-5 relative bg-customYellow lg:bg-white"
             style={{
                 scrollSnapAlign: "start",
             }}
@@ -37,13 +39,17 @@ function Section3(): JSX.Element {
                     />
                 )}
 
-                <TextSection item={action} isVisibleSec3={isVisibleSec3} />
+                <TextSection
+                    title={title}
+                    text={text}
+                    isVisibleSec3={isVisibleSec3}
+                />
                 <CardSection
                     isVisibleSec3={isVisibleSec3}
                     isModal={isModal}
                     setCardSelected={setCardSelected}
                     setIsModal={setIsModal}
-                    item={action?.action_cards}
+                    item={action_cards}
                 />
             </div>
         </div>

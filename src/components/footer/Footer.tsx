@@ -37,10 +37,17 @@ function Footer(): JSX.Element {
 
                     <ContactForm />
                 </div>
-                <p className="text-xs text-center lg:text-left mb-5 lg:ml-5 w-full">
-                    Produce by @DigitialCopilote / Develop by Thomas Barrial and
-                    Julien Abbadie / Design by ThomasBarrial
-                </p>
+                <div className="text-xs text-center lg:text-left mb-5 lg:ml-5 w-full">
+                    <a href="https://digitalcopilote.io/" target="_blank">
+                        Produce by @DigitialCopilote
+                    </a>
+                    <a
+                        href="https://www.portfolio.thomasbarrial.com/"
+                        target="_blank"
+                    >
+                        / Develop by Thomas Barrial / Design by ThomasBarrial
+                    </a>
+                </div>
             </div>
         </div>
     );
